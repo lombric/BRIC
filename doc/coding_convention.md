@@ -6,13 +6,16 @@ Version: 1.0**
 ## SQL ##
 The name of the fields need to be in english and on the singular form.
 
-Primary key: **PK__N**ame
-example: **PK__I**D
+name of the database and the tables: name
+example: user
 
-Foreign key: **FK__N**ame 
-example: **FK__U**ser
+Primary key: **idn**ame
+example: **id**name
 
-Name of the compound fields: **m**in**M**aj
-example: userAddress 
+Foreign key: **FK__n**ame 
+example: **fk__u**ser
+
+Name of the compound fields: name_name
+example: user__address 
 
 
