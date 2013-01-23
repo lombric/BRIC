@@ -12,7 +12,7 @@ example: user
 Primary key: **idn**ame
 example: **id**name
 
-Foreign key: **FK__n**ame 
+Foreign key: **fk__n**ame 
 example: **fk__u**ser
 
 Name of the compound fields: name_name
