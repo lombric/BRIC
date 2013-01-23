@@ -3,6 +3,7 @@ Date: 23.01.2012
 Version: 1.0**
 
 # Working groups list #
+The administrators want to modify the working groups list
 
 ## Demonstration (demo scenario) ##
 
@@ -12,3 +13,4 @@ Version: 1.0**
 - Delete it
 
 ## Procedure ##
+
