@@ -57,7 +57,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=lombric', /*localhost connexion with the lombric.sql script*/
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'tiago',
+			'password' => 'lombric',
 			'charset' => 'utf8',
 		),
 		
