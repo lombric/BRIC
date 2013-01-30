@@ -29,9 +29,18 @@
 	<?php echo CHtml::encode($data->date_end); ?>
 	<br />
 
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('fk_idgroup')); ?>:</b>
 	<?php echo CHtml::encode($data->fk_idgroup); ?>
 	<br />
+	 */ ?>
+
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('hide')); ?>:</b>
+	<?php echo CHtml::encode($data->hide); ?>
+
+	<br />
+
 
 
 </div>

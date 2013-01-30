@@ -11,6 +11,7 @@
  * @property string $date_begin
  * @property string $date_end
  * @property integer $fk_idgroup
+ * @property integer $hide
  *
  * The followings are the available model relations:
  * @property Group $fkIdgroup
@@ -45,12 +46,12 @@ class Group extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('fk_idgroup', 'numerical', 'integerOnly'=>true),
+			array('fk_idgroup, hide', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
 			array('description, specifications, date_begin, date_end', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('idgroup, name, description, specifications, date_begin, date_end, fk_idgroup', 'safe', 'on'=>'search'),
+			array('idgroup, name, description, specifications, date_begin, date_end, fk_idgroup, hide', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,6 +81,7 @@ class Group extends CActiveRecord
 			'date_begin' => 'Date Begin',
 			'date_end' => 'Date End',
 			'fk_idgroup' => 'Fk Idgroup',
+			'hide' => 'Hide',
 		);
 	}
 
@@ -101,6 +103,7 @@ class Group extends CActiveRecord
 		$criteria->compare('date_begin',$this->date_begin,true);
 		$criteria->compare('date_end',$this->date_end,true);
 		$criteria->compare('fk_idgroup',$this->fk_idgroup);
+		$criteria->compare('hide',$this->hide);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

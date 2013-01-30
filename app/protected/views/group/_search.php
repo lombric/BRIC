@@ -46,6 +46,11 @@
 		<?php echo $form->textField($model,'fk_idgroup'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'hide'); ?>
+		<?php echo $form->textField($model,'hide'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

@@ -1,4 +1,4 @@
-	<?php
+<?php
 /* @var $this GroupController */
 /* @var $model Group */
 /* @var $form CActiveForm */
@@ -33,7 +33,7 @@
 		<?php echo $form->error($model,'specifications'); ?>
 	</div>
 
-	<div class="row">
+		<div class="row">
 		<?php echo $form->labelEx($model,'date_begin'); ?>
                 <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                                 'name'=>'date_begin',
@@ -79,7 +79,19 @@
 		<?php echo $form->error($model,'fk_idgroup'); ?>
 	</div>
 
-	
+	<div class="row">
+		<?php echo $form->labelEx($model,'hide'); ?>
+		<?php echo $form->error($model,'hide'); ?>
+		<?php echo $form->checkBox($model,'hide',  array('checked'=>'checked')); ?>
+	</div>
+
+
+
+
+
+
+
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

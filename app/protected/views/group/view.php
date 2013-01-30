@@ -28,5 +28,6 @@ $this->menu=array(
 		'date_begin',
 		'date_end',
 		'fk_idgroup',
+		'hide',
 	),
 )); ?>
