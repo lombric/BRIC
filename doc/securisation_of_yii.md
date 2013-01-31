@@ -5,11 +5,11 @@ Make Yii login work with the database
 -------------------------------------
 
 In app/protected/components/UserIdentity.php
-you have to change the function authenticate with a database connection
+you have to change the function *authenticate()* with a database connection
 
 Change the password for Gii
 ---------------------------
-to improve the securisation of Yii you can change the pssword of Gii in /protected/config/main.php
+To improve the securisation of Yii you can change the password of Gii in /protected/config/main.php
 
 AccessRules for controller
 --------------------------
