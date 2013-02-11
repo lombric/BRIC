@@ -1,6 +1,6 @@
 <?php
-/* @var $this GroupController */
-/* @var $model Group */
+/* @var $this GroupsController */
+/* @var $model Groups */
 
 $this->breadcrumbs=array(
 	'Groups'=>array('index'),
@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Group', 'url'=>array('index')),
-	array('label'=>'Create Group', 'url'=>array('create')),
+	//array('label'=>'List Groups', 'url'=>array('index')),
+	array('label'=>'Create Groups', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('group-grid', {
+	$.fn.yiiGridView.update('groups-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -41,21 +41,19 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'group-grid',
+	'id'=>'groups-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'idgroup',
+		'id_groups',
 		'name',
 		'description',
 		'specifications',
-		'date_begin',
-		'date_end',
-		/*
-		'fk_idgroup',
-		*/
+		'parent_id',
 		'hide',
-		
+		/*
+		'system',
+		*/
 		array(
 			'class'=>'CButtonColumn',
 		),

@@ -1,5 +1,5 @@
 <?php
-/* @var $this GroupController */
+/* @var $this GroupsController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Group', 'url'=>array('create')),
-	array('label'=>'Manage Group', 'url'=>array('admin')),
+	array('label'=>'Create Groups', 'url'=>array('create')),
+	array('label'=>'Manage Groups', 'url'=>array('admin')),
 );
 ?>
 

@@ -1,21 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "subgroup".
+ * This is the model class for table "groups".
  *
- * The followings are the available columns in table 'subgroup':
- * @property integer $idsubgroup
- * @property integer $fk_idgroup
+ * The followings are the available columns in table 'groups':
+ * @property integer $id_groups
+ * @property string $name
+ * @property string $description
+ * @property string $specifications
+ * @property integer $parent_id
+ * @property integer $hide
+ * @property integer $system
  *
  * The followings are the available model relations:
- * @property Group $fkIdgroup
+ * @property Groups $parent
+ * @property Groups[] $groups
  */
-class Subgroup extends CActiveRecord
+class Groups extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Subgroup the static model class
+	 * @return Groups the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -27,7 +33,7 @@ class Subgroup extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'subgroup';
+		return 'groups';
 	}
 
 	/**
@@ -38,11 +44,13 @@ class Subgroup extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('idsubgroup', 'required'),
-			array('idsubgroup, fk_idgroup', 'numerical', 'integerOnly'=>true),
+			array('name', 'required'),
+			array('parent_id, hide, system', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>45),
+			array('description, specifications', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('idsubgroup, fk_idgroup', 'safe', 'on'=>'search'),
+			array('id_groups, name, description, specifications, parent_id, hide, system', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,7 +62,8 @@ class Subgroup extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'fkIdgroup' => array(self::BELONGS_TO, 'Group', 'fk_idgroup'),
+			'parent' => array(self::BELONGS_TO, 'Groups', 'parent_id'),
+			'groups' => array(self::HAS_MANY, 'Groups', 'parent_id'),
 		);
 	}
 
@@ -64,8 +73,13 @@ class Subgroup extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idsubgroup' => 'Idsubgroup',
-			'fk_idgroup' => 'Fk Idgroup',
+			'id_groups' => 'Id Groups',
+			'name' => 'Name',
+			'description' => 'Description',
+			'specifications' => 'Specifications',
+			'parent_id' => 'Parent',
+			'hide' => 'Hide',
+			'system' => 'System',
 		);
 	}
 
@@ -80,8 +94,13 @@ class Subgroup extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('idsubgroup',$this->idsubgroup);
-		$criteria->compare('fk_idgroup',$this->fk_idgroup);
+		$criteria->compare('id_groups',$this->id_groups);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('specifications',$this->specifications,true);
+		$criteria->compare('parent_id',$this->parent_id);
+		$criteria->compare('hide',$this->hide);
+		$criteria->compare('system',$this->system);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

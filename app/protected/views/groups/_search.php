@@ -1,6 +1,6 @@
 <?php
-/* @var $this GroupController */
-/* @var $model Group */
+/* @var $this GroupsController */
+/* @var $model Groups */
 /* @var $form CActiveForm */
 ?>
 
@@ -12,8 +12,8 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'idgroup'); ?>
-		<?php echo $form->textField($model,'idgroup'); ?>
+		<?php echo $form->label($model,'id_groups'); ?>
+		<?php echo $form->textField($model,'id_groups'); ?>
 	</div>
 
 	<div class="row">
@@ -32,23 +32,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'date_begin'); ?>
-		<?php echo $form->textField($model,'date_begin'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'date_end'); ?>
-		<?php echo $form->textField($model,'date_end'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'fk_idgroup'); ?>
-		<?php echo $form->textField($model,'fk_idgroup'); ?>
+		<?php echo $form->label($model,'parent_id'); ?>
+		<?php echo $form->textField($model,'parent_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'hide'); ?>
 		<?php echo $form->textField($model,'hide'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'system'); ?>
+		<?php echo $form->textField($model,'system'); ?>
 	</div>
 
 	<div class="row buttons">
