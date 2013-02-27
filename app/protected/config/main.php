@@ -53,8 +53,9 @@ return array(
 		*/
 		// uncomment the following to use a MySQL database
 		
+		// Default data connection
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=lombric', /*localhost connexion with the lombric.sql script*/
+			'connectionString' => 'mysql:host=localhost;dbname=lombric',
 			'emulatePrepare' => true,
 			'username' => 'lombric',
 			'password' => 'lombric',
