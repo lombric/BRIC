@@ -5,8 +5,8 @@ $yii=dirname(__FILE__).'/../yii/framework/yii.php';
 
 require_once($yii);
 
-$local=require(dirname(_FILE_).'/protected/config/main-local.php');
-$base=require(dirname(_FILE_).'/protected/config/main.php');
+$local=require(dirname(__FILE__).'/protected/config/main-local.php');
+$base=require(dirname(__FILE__).'/protected/config/main.php');
 $config=CMap::mergeArray($base, $local);
 //$config=dirname(__FILE__).'/protected/config/main.php';
 
