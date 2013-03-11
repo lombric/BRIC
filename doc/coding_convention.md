@@ -1,6 +1,6 @@
 **Function: establish the convention rules for the coding  
-Date: 27.02.2013  
-Version: 2.0**
+Date: 04.03.2013  
+Version: 2.1**
 
 #Coding convention
 
@@ -16,8 +16,9 @@ example: **users\_groups**
 
 The name of the fields need to be in english and on the singular form.
 
-Primary key: name\_id  
-example: **user\_id**
+Primary key: **id**
+
+The foreign key contains a real name for the relation.
 
 Foreign key: name\_id   
 example: **group\_id**
@@ -25,10 +26,19 @@ example: **group\_id**
 Name of the compound fields: name\_name  
 example: **first_name**
 
+###Foreign key constraint
+
+The constraint's name contains the names of the two tables.
+
+Constraint: fk\_name1\_name2   
+example: **fk\_users\_groups**
+
 ###Encodage
 
 The database, the tables and all the fields must be set with the same charset.  
 Prefer **UTF8** for a better internationalization.
+
+Use **utf8\_general\_ci** for the database collation.
 
 ##PHP
 
