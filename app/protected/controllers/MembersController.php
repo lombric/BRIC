@@ -1,6 +1,6 @@
 <?php
 
-class GroupsController extends Controller
+class MembersController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class GroupsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Groups;
+		$model=new Members;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Groups']))
+		if(isset($_POST['Members']))
 		{
-			$model->attributes=$_POST['Groups'];
+			$model->attributes=$_POST['Members'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class GroupsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Groups']))
+		if(isset($_POST['Members']))
 		{
-			$model->attributes=$_POST['Groups'];
+			$model->attributes=$_POST['Members'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class GroupsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Groups');
+		$dataProvider=new CActiveDataProvider('Members');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class GroupsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Groups('search');
+		$model=new Members('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Groups']))
-			$model->attributes=$_GET['Groups'];
+		if(isset($_GET['Members']))
+			$model->attributes=$_GET['Members'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -150,7 +150,7 @@ class GroupsController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Groups::model()->findByPk($id);
+		$model=Members::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -162,7 +162,7 @@ class GroupsController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='groups-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='members-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

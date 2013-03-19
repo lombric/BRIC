@@ -36,8 +36,8 @@
 
     <div class="row">
         <?php echo $form->labelEx($model,'Sub Group'); ?>
-		<?php echo $form->dropDownList($model, 'id_groups',
-				CHtml::listData(Groups::model()->findAll(), 'id_groups', 'name'), array('empty'=>'Selectionnez')
+		<?php echo $form->dropDownList($model, 'id',
+				CHtml::listData(Groups::model()->findAll(), 'id', 'name'), array('empty'=>'Selectionnez')
             );
           ?>
 		<?php echo $form->error($model,'parent_id'); ?>

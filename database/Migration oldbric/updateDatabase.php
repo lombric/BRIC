@@ -72,11 +72,19 @@ try{
 			"hide"=>$hide
 			)
 		);
-	}catch(Exception $e){
+		echo 'champ reussi '.$name .'</br>';
+	}
+	
+	catch(Exception $e) {
+
 		echo $e->getMessage();
+		echo 'erreur script'.$name .'</br>';
 	}
 
 }
 
+
+
+  
 ?>
 

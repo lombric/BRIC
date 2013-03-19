@@ -4,7 +4,7 @@
  * This is the model class for table "groups".
  *
  * The followings are the available columns in table 'groups':
- * @property integer $id_groups
+ * @property integer $id
  * @property string $name
  * @property string $description
  * @property string $specifications
@@ -50,7 +50,7 @@ class Groups extends CActiveRecord
 			array('description, specifications', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id_groups, name, description, specifications, parent_id, hide, system', 'safe', 'on'=>'search'),
+			array('id, name, description, specifications, parent_id, hide, system', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,7 +73,7 @@ class Groups extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_groups' => 'Id Groups',
+			'id' => 'Id',
 			'name' => 'Name',
 			'description' => 'Description',
 			'specifications' => 'Specifications',
@@ -94,7 +94,7 @@ class Groups extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id_groups',$this->id_groups);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('specifications',$this->specifications,true);
