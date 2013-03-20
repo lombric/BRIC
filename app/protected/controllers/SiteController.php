@@ -1,10 +1,21 @@
 <?php
 
-class SiteController extends Controller
+class SiteController extends AccessController
 {
 	/**
 	 * Declares class-based actions.
 	 */
+
+	public function accessRules(){
+        $rules=parent::accessRules();
+        array_unshift($rules,array(
+            'allow',  // allow all users to perform 'login'
+            'actions'=>array('login'),
+            'users'=>array('*'),
+        ));
+        return $rules;
+    }
+
 	public function actions()
 	{
 		return array(
@@ -29,7 +40,10 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		if(Yii::app()->user->getId()===null)
+            $this->redirect(array('site/login'));
+        else
+			$this->render('index');
 	}
 
 	/**
