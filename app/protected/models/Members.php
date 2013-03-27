@@ -20,6 +20,18 @@
  */
 class Members extends CActiveRecord
 {
+
+	public $password2;
+	
+	
+    // public function beforeSave()
+    // {
+        // in this case, we will use the old hashed password.
+        // if(empty($this->password) && empty($this->password2) && !empty($this->initialPassword))
+            // $this->password=$this->password2=$this->initialPassword;
+ 
+        // return parent::beforeSave();
+    // }
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -47,6 +59,7 @@ class Members extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('firstname, lastname, email, username, password', 'required'),
+			array('password2', 'required', 'on'=>'register'),
 			array('firstname, lastname, city', 'length', 'max'=>45),
 			array('email', 'length', 'max'=>80),
 			array('address', 'length', 'max'=>100),
@@ -54,6 +67,7 @@ class Members extends CActiveRecord
 			array('mobile_phone, phone, username, password', 'length', 'max'=>20),
 			array('status', 'length', 'max'=>6),
 			array('description', 'safe'),
+			array('password', 'compare', 'compareAttribute'=>'password2', 'on'=>'register'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, firstname, lastname, email, city, address, zip, mobile_phone, phone, description, status, username, password', 'safe', 'on'=>'search'),

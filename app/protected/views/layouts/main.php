@@ -31,7 +31,8 @@
 			if(Yii::app()->user->getId()===null) {
 				 $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
-					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest)
+					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Register', 'url'=>array('/members/register'), 'visible'=>Yii::app()->user->isGuest)
 					),
 				));
 			}

@@ -27,6 +27,10 @@ class MembersController extends Controller
 	public function accessRules()
 	{
 		return array(
+			array('allow',  // allow all users to access to register form
+				'actions'=>array('register'),
+				'users'=>array('?'),
+			),			
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('@'),
@@ -39,9 +43,13 @@ class MembersController extends Controller
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
-			array('deny',  // deny all users
+			// array('deny', // deny all connected users to access to register form
+				// 'actions'=>array('register'),
+				// 'users'=>array('@'),
+			// ),		
+			array('deny', // deny all users
 				'users'=>array('*'),
-			),
+			),				
 		);
 	}
 
@@ -77,6 +85,23 @@ class MembersController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+	}
+	
+	public function actionRegister(){
+	
+		$model=new Members;
+		$model->scenario = 'register';
+		if(isset($_POST['Members']))
+		{
+			$model->attributes=$_POST['Members'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('register',array(
+			'model'=>$model,
+		));
+	
 	}
 
 	/**
