@@ -26,15 +26,12 @@ class UserIdentity extends CUserIdentity
 
         $user = Members::model()->find($criteria);
 
-	    if($user === NULL){
-                $this->errorCode=self::ERROR_USERNAME_INVALID;
-            	$this->errorCode=self::ERROR_PASSWORD_INVALID;
-        }
-        else{
-                $this->username = $user->username;
-                $this->errorCode=self::ERROR_NONE;
-
-        }
-        return !$this->errorCode;
-}
+		if(!isset($user->username))
+			$this->errorCode=self::ERROR_UNKNOWN_IDENTITY;
+		else {
+			$this->username = $user->username;
+			$this->errorCode=self::ERROR_NONE;
+		}
+		return !$this->errorCode;
+	}
 }
