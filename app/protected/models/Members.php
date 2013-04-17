@@ -55,19 +55,27 @@ class Members extends CActiveRecord
 	 */
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
+		// NOTE: you should only define rules for those attributes	
 		// will receive user inputs.
 		return array(
-			array('firstname, lastname, email, username, password', 'required'),
-			array('password2', 'required', 'on'=>'register'),
-			array('firstname, lastname, city', 'length', 'max'=>45),
-			array('email', 'length', 'max'=>80),
-			array('address', 'length', 'max'=>100),
+			//Length
 			array('zip', 'length', 'max'=>8),
-			array('mobile_phone, phone, username, password', 'length', 'max'=>20),
 			array('status', 'length', 'max'=>6),
-			array('description', 'safe'),
+			array('address', 'length', 'max'=>100),
+			array('firstname, lastname, city', 'length', 'max'=>45),
+			array('mobile_phone, phone, username, password', 'length', 'max'=>20),
+			//Require & OnRegister
+			array('password2', 'required', 'on'=>'register'),
+			array('firstname, lastname, email, username, password', 'required'),
 			array('password', 'compare', 'compareAttribute'=>'password2', 'on'=>'register'),
+			//Validation
+			array('firstname, lastname, city', 'match', 'pattern'=>'/^[\\w\\-\\ ][^0-9]+$/u'),
+			array('address, username', 'match', 'pattern'=>'/^[\\w\\-\\ ]+$/u'),
+			array('email', 'email'),
+			array('zip', 'match', 'pattern'=>'/^[0-9]{4,5}$/'),
+			array('phone, mobile_phone', 'match', 'pattern'=>'/^[0-9+\\ ]{10,16}$/'),
+			//Other
+			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, firstname, lastname, email, city, address, zip, mobile_phone, phone, description, status, username, password', 'safe', 'on'=>'search'),
