@@ -1,15 +1,9 @@
 
-/* DATABASE */
-
-ALTER DATABASE CHARACTER SET UTF8 COLLATE utf8_general_ci;
-
-
-
-/* TABLE : GROUPS */
-
 DROP TABLE IF EXISTS `groups`;
+DROP TABLE IF EXISTS `members`;
+DROP TABLE IF EXISTS `members_groups`;
 
-CREATE TABLE IF NOT EXISTS `groups` (
+CREATE TABLE `groups`(
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `description` text,
@@ -18,15 +12,10 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `hide` BOOLEAN NOT NULL DEFAULT 0,
   `system` BOOLEAN NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 
-
-/* TABLE : Member */
-
-DROP TABLE IF EXISTS `members`;
-
-CREATE TABLE IF NOT EXISTS `members` (
+CREATE TABLE `members`(
   `id` int(11)  unsigned  NOT NULL AUTO_INCREMENT,
   `firstname` varchar(45) NOT NULL,
   `lastname` varchar(45) NOT NULL,
@@ -41,32 +30,12 @@ CREATE TABLE IF NOT EXISTS `members` (
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-  
-
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 
-/* TABLE : Member and Groups */
-
-DROP TABLE IF EXISTS `members_groups`;
-
-CREATE TABLE IF NOT EXISTS `members_groups` (
+CREATE TABLE `members_groups`(
   `id` int(11)  unsigned  NOT NULL AUTO_INCREMENT,
   `group_id` int(11)  unsigned NOT NULL,
   `member_id` int(11)  unsigned NOT NULL,
   PRIMARY KEY (`id`)
-
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
-
-
-
---
--- Contraintes pour la table `members`
---
-/* 
-ALTER TABLE `members`
-  ADD CONSTRAINT `fk_members_groups` FOREIGN KEY (`groups_id`) 
-  REFERENCES `lombric`.`groups`(`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-*/
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
