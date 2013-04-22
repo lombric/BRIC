@@ -1,0 +1,20 @@
+<?php
+
+return array(
+    'components'=>array(
+        'db' => array(
+            'connectionString' => 'mysql:host=SERVER;dbname=DATABASE',
+            'emulatePrepare' => true,
+            'username' => 'USER',
+            'password' => 'PASSWORD',
+            'charset' => 'utf8',
+        ),
+    ),
+    'modules'=> array(
+        'gii'=>array(
+            'password'=>'PASSWORD',
+        ),
+    ),
+);
+
+?>
