@@ -64,6 +64,8 @@ class Groups extends CActiveRecord
 		return array(
 			'parent' => array(self::BELONGS_TO, 'Groups', 'parent_id'),
 			'groups' => array(self::HAS_MANY, 'Groups', 'parent_id'),
+			'membersgroups' => array(self::HAS_MANY, 'MembersGroups', 'group_id'),
+			
 		);
 	}
 

@@ -32,6 +32,17 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('zip')); ?>:</b>
 	<?php echo CHtml::encode($data->zip); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('groups')); ?>:</b>
+	<?php foreach($data->membersgroups as $a){ 
+			echo $a->groups->name;
+		  }
+	?>
+	<br />
+	
+	
+	
+
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('mobile_phone')); ?>:</b>

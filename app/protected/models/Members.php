@@ -78,7 +78,7 @@ class Members extends CActiveRecord
 			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, firstname, lastname, email, city, address, zip, mobile_phone, phone, description, status, username, password', 'safe', 'on'=>'search'),
+			array('id, firstname, lastname, email, city, address, zip, mobile_phone, phone, description, status, username, password', 'safe', 'on'=>'search'),		
 		);
 	}
 
@@ -90,6 +90,7 @@ class Members extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'membersgroups' => array(self::HAS_MANY, 'MembersGroups', 'member_id'),
 		);
 	}
 
@@ -112,6 +113,9 @@ class Members extends CActiveRecord
 			'status' => 'Status',
 			'username' => 'Username',
 			'password' => 'Password',
+			// external relation
+			'groups' => 'groups',
+			
 		);
 	}
 
