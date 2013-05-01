@@ -35,7 +35,9 @@ Get the source code with:
 
 Your local files will not be push to the Git Repository.
 
+Note: if you have troubles with GIIX update the **submodules** with the following command:
 
+    git submodule update --init --recursive
 
 
 
