@@ -84,11 +84,11 @@ return array(
                 */
             ),
         ),
-        'messages' => array (
-            'extensionBasePaths' => array(
-                'giix' => 'ext.giix.messages', // giix messages directory.
+        /*'messages' => array (
+            'extensionPaths' => array(
+                'giix' => 'ext.giix.messages',
             ),
-        ),
+        ),*/
     ),
 
     // application-level parameters that can be accessed
