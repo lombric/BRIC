@@ -3,14 +3,18 @@
 /* @var $data Groups */
 ?>
 
-<div class="view">
+<?php
+if (!$data->hide) {
+?>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+<div class="view">
+	
+	<!-- <b><?php /*echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id));*/ ?>
+	<br /> -->
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::encode($data->name); ?>
+	<?php echo CHtml::link(CHtml::encode($data->name), array('view', 'id'=>$data->id)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
@@ -20,18 +24,28 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('specifications')); ?>:</b>
 	<?php echo CHtml::encode($data->specifications); ?>
 	<br />
+	
+	<?php 
+	if (isset($data->parent_id) && is_numeric($data->parent_id)) {
+	?>
+		<b><?php echo CHtml::encode($data->getAttributeLabel('ancestor')); ?>:</b>
+		<?php echo  CHtml::link(CHtml::encode($data->ancestor->name), array('view', 'id'=>$data->ancestor->id)); ?>
+		<br />
+	<?php
+	}
+	?>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('parent_id')); ?>:</b>
-	<?php echo CHtml::encode($data->parent_id); ?>
-	<br />
+	<!-- <b><?php /*echo CHtml::encode($data->getAttributeLabel('hide')); ?>:</b>
+	<?php echo CHtml::encode($data->hide);*/ ?>
+	<br /> -->
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('hide')); ?>:</b>
-	<?php echo CHtml::encode($data->hide); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('system')); ?>:</b>
-	<?php echo CHtml::encode($data->system); ?>
-	<br />
+	<!-- <b><?php /*echo CHtml::encode($data->getAttributeLabel('system')); ?>:</b>
+	<?php echo CHtml::encode($data->system);*/ ?>
+	<br /> -->
 
 
 </div>
+
+<?php
+}
+?>

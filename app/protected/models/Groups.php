@@ -62,8 +62,8 @@ class Groups extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'parent' => array(self::BELONGS_TO, 'Groups', 'parent_id'),
-			'groups' => array(self::HAS_MANY, 'Groups', 'parent_id'),
+			'ancestor' => array(self::BELONGS_TO, 'Groups', 'parent_id'),
+			'children' => array(self::HAS_MANY, 'Groups', 'parent_id'),
 		);
 	}
 
@@ -77,9 +77,11 @@ class Groups extends CActiveRecord
 			'name' => 'Name',
 			'description' => 'Description',
 			'specifications' => 'Specifications',
-			'parent_id' => 'Parent',
+			'parent_id' => 'Parent id',
 			'hide' => 'Hide',
 			'system' => 'System',
+			'ancestor' => 'Parent',
+			'children' => 'Sous-groupes',
 		);
 	}
 

@@ -8,8 +8,8 @@ return array(
 		'db' => array(
 			'connectionString' => 'mysql:host=localhost;dbname=lombric', /*localhost connexion with the lombric.sql script*/
 			'emulatePrepare' => true,
-			'username' => 'lombric',
-			'password' => 'lombric',
+			'username' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 		)
 	)
