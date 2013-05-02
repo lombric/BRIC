@@ -9,6 +9,16 @@ return array(
             'password' => 'PASSWORD',
             'charset' => 'utf8',
         ),
+        // OPTIONAL, this DSN provide a connection to an other database
+        // used for the lombric data migrations
+        'oldDb' => array(
+            'connectionString' => 'mysql:host=SERVER;dbname=DATABASE',
+            'emulatePrepare' => true,
+            'username' => 'USER',
+            'password' => 'PASSWORD',
+            'charset' => 'utf8',
+            'class' => 'CDbConnection', // Important
+        ),
     ),
 );
 

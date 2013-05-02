@@ -37,5 +37,6 @@ CREATE TABLE `members_groups`(
   `id` int(11)  unsigned  NOT NULL AUTO_INCREMENT,
   `group_id` int(11)  unsigned NOT NULL,
   `member_id` int(11)  unsigned NOT NULL,
+  `is_admin` BOOLEAN NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

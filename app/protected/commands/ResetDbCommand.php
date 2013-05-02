@@ -5,7 +5,6 @@ class ResetDbCommand extends CConsoleCommand{
     private $db;
 
     private $useOldDb = false;
-    private $oldDbName = 'lombric_old';
     private $oldDb;
 
     public function run($params){
@@ -13,9 +12,8 @@ class ResetDbCommand extends CConsoleCommand{
         echo "\n-START";
 
         // Insert datas or not, if yes save the name of the old database to use
-        if(isset($params[0]) && is_string($params[0])){
+        if(isset($params[0]) && is_string($params[0]) && $params[0] == 'with-datas'){
             $this->useOldDb = true;
-            $this->oldDbName = $params[0];
         }
 
         // Main database connection
@@ -45,13 +43,11 @@ class ResetDbCommand extends CConsoleCommand{
         }
 
         // Datas
-        $t = $this->db->beginTransaction();
         if($this->useOldDb == true){
+            $t = $this->db->beginTransaction();
             try{
                 echo "\n-OLD DATABASE CONNECTION ";
-                $this->oldDb = new CDbConnection('mysql:host=localhost;dbname=' . $this->oldDbName, Yii::App()->db->username, Yii::App()->db->password);
-                $this->oldDb->active=true;
-                $this->oldDb->charset = 'utf8';
+                @$this->oldDb = Yii::app()->oldDb;
                 echo "[OK]";
                 echo "\n-INSERTING DATAS ";
                 require_once(dirname(__FILE__) . '/../../../database/datas.php');
@@ -66,6 +62,20 @@ class ResetDbCommand extends CConsoleCommand{
         }
         else
             echo "\n-INSERTING DATAS [SKIP]";
+
+        // Default entries
+        $t = $this->db->beginTransaction();
+        try{
+            echo "\n-INSERTING DEFAULT ";
+            $this->db->createCommand("INSERT INTO `members` (`firstname`, `lastname`, `email`, `status`, `username`, `password`) VALUES ('admin', 'admin', 'admin@app.local', 'active', 'admin', 'admin');")->execute();
+            $t->commit();
+            echo "[OK]";
+        }
+        catch(Exception $e){
+            $t->rollBack();
+            echo "[ERROR] : " . $e->getMessage(); 
+            exit;
+        }
 
         echo "\n-END\n";
 
