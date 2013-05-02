@@ -19,7 +19,7 @@ CREATE TABLE `members`(
   `id` int(11)  unsigned  NOT NULL AUTO_INCREMENT,
   `firstname` varchar(45) NOT NULL,
   `lastname` varchar(45) NOT NULL,
-  `email` varchar(80) NOT NULL,
+  `email` varchar(80) NULL,
   `city` varchar(45),
   `address` varchar(100),
   `zip` varchar(8), 

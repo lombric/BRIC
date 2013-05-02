@@ -32,6 +32,14 @@ If you specify the parameter **with-datas**, it will be used to specify that you
 The script use the **console-main.php** configuration file for the database connection.
 
 
+#####Default#####
+
+There is a default user in the database :
+
+- Name : **admin**
+- Password : **admin**
+
+
 ###GIIX###
 
 An extension of GII is included.

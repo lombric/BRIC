@@ -2,7 +2,7 @@
 
 // Get old items
 $oldMembers = $this->oldDb->createCommand()
-    ->select('id, prenom, nom, email, ville, adresse, npa, natel, telephone, remarque, login')
+    ->select('id, prenom, nom, email, ville, adresse, npa, natel, telephone, remarque, login, motDePasse')
     ->from('membres')
     ->queryAll();
 
@@ -11,7 +11,10 @@ $id = 0;
 $membersId = array();
 foreach($oldMembers as $item){
     $id++;
-    $membersId[$item['id']] = $id;
+    if($item['id']>0)
+        $membersId[$item['id']] = $id;
+    else
+        $membersId[$item['id']] = NULL;
 }
 
 // Insert items
@@ -21,16 +24,16 @@ foreach($oldMembers as $item){
     $id++;
     $command->insert('members', array(
         'id' => $id,
-        'firstname' => utf8_encode($item['prenom']),
-        'lastname' => utf8_encode($item['nom']),
-        'email' => utf8_encode($item['email']),
-        'city' => utf8_encode($item['ville']),
-        'address' => utf8_encode($item['adresse']),
-        'zip' => utf8_encode($item['npa']),
-        'mobile_phone' => utf8_encode($item['natel']),
-        'phone' => utf8_encode($item['telephone']),
-        'description' => utf8_encode($item['remarque']),
-        'username' => utf8_encode($item['login']),
-        'password' => utf8_encode('')
+        'firstname' => $item['prenom'],
+        'lastname' => $item['nom'],
+        'email' => $item['email'],
+        'city' => $item['ville'],
+        'address' => $item['adresse'],
+        'zip' => $item['npa'],
+        'mobile_phone' => $item['natel'],
+        'phone' => $item['telephone'],
+        'description' => $item['remarque'],
+        'username' => $item['login'],
+        'password' => $item['motDePasse']
     ));
 }

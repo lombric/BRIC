@@ -12,7 +12,10 @@ $id = 0;
 $groupsId = array();
 foreach($oldGroups as $item){
     $id++;
-    $groupsId[$item['id']] = $id;
+    if($item['id']>0)
+        $groupsId[$item['id']] = $id;
+    else
+        $groupsId[$item['id']] = NULL;
 }
 
 // Insert items
@@ -22,9 +25,9 @@ foreach($oldGroups as $item){
     $id++;
     $command->insert('groups', array(
         'id' => $id,
-        'name' => utf8_encode($item['nom']),
-        'description' => utf8_encode($item['description']),
-        'specifications' => utf8_encode($item['cahier']),
+        'name' => $item['nom'],
+        'description' => $item['description'],
+        'specifications' => $item['cahier'],
         'parent_id' => $groupsId[$item['idGroupeParent']],
         'hide' => $item['cache']
     ));
