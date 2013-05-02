@@ -31,6 +31,15 @@ class SiteController extends AccessController
 			),
 		);
 	}
+	
+	public function actionDashboard()
+	{
+		// The user dashboard
+		if(Yii::app()->user->getId()===null)
+            $this->redirect(array('site/login'));
+        else
+			$this->render('dashboard');
+	}
 
 	/**
 	 * This is the default 'index' action that is invoked

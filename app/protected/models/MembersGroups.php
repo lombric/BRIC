@@ -52,8 +52,8 @@ class MembersGroups extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'groups' => array(self::BELONGS_TO, 'Groups', 'id'),
-			'members' => array(self::BELONGS_TO, 'Members', 'id'),
+			'groups' => array(self::BELONGS_TO, 'Groups', 'group_id'),
+			'members' => array(self::BELONGS_TO, 'Members', 'member_id'),
 		);
 	}
 
