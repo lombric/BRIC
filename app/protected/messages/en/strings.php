@@ -19,19 +19,23 @@
 		'Erreur' => 'Error',
 
 		//Members
-		'Liste des membres' => 'List Members',
-		'Créer des membres' => 'Create Members',
-		'Mettre à jour des membres' => 'Update Members',
-		'Supprimer des membres' => 'Delete Members',
+		'Liste des membres' => 'List Member',
+		'Créer un membre' => 'Create Member',
+		'Mettre à jour le membre' => 'Update Members',
+		'Supprimer le membre' => 'Delete Members',
+		'Gérer le membre' => 'Manage Member',
 		'Gérer les membres' => 'Manage Members',
-		'Voir les membres' => 'View Members',
+		'Voir le membre' => 'View Members',
 		'<h1>Nouveau membre</h1>' => '<h1>New Member</h1>',
-		'<h1>Créer des membres</h1>' => '<h1>Create Members</h1>'
-		'<h1>Gérer les membres</h1>' => '<h1>Manage Members</h1>'
+		'<h1>Créer un membre</h1>' => '<h1>Create Members</h1>',
+		'<h1>Gérer les membres</h1>' => '<h1>Manage Members</h1>',
+		'Voir le membre' => 'View Members',
+		'Voir le membre' => 'Show the member',
+		'<h1>Membres</h1>' => '<h1>Members</h1>',
 
 		//Globale
 		'Créer' => 'Create',
 		'Gérer' => 'Manage',
-		'Inscription' => 'Register',
+		'Inscription' => 'Register'
 	);
 ?>

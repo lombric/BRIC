@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('strings', "Créer des membres"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Créer un membre"), 'url'=>array('create')),
 	array('label'=>Yii::t('strings', "Gérer les membres"), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Members</h1>
+<?php echo Yii::t('strings', "<h1>Membres</h1>"); ?>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
