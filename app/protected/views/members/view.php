@@ -3,16 +3,16 @@
 /* @var $model Members */
 
 $this->breadcrumbs=array(
-	'Members'=>array('index'),
+	Yii::t('strings', "Membres")=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List Members', 'url'=>array('index')),
-	array('label'=>'Create Members', 'url'=>array('create')),
-	array('label'=>'Update Members', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Members', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Members', 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Liste des membres"), 'url'=>array('index')),
+	array('label'=>Yii::t('strings', "Créer des membres"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Mettre à jour des membres"), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('strings', "Supprimer des membres"), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>Yii::t('strings', "Gérer les membres"), 'url'=>array('admin')),
 );
 ?>
 

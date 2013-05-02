@@ -3,16 +3,16 @@
 /* @var $model Members */
 
 $this->breadcrumbs=array(
-	'Members'=>array('index'),
-	'Create',
+	Yii::t('strings', "Membres")=>array('index'),
+	Yii::t('strings', "Créer"),
 );
 
 $this->menu=array(
-	array('label'=>'List Members', 'url'=>array('index')),
-	array('label'=>'Manage Members', 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Liste des membres"), 'url'=>array('index')),
+	array('label'=>Yii::t('strings', "Gérer les membres"), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Members</h1>
+<?php echo Yii::t('strings', "<h1>Créer des membres</h1>"); ?>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

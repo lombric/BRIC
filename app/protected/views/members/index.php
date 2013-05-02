@@ -3,12 +3,12 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Members',
+	Yii::t('strings', "Membres"),
 );
 
 $this->menu=array(
-	array('label'=>'Create Members', 'url'=>array('create')),
-	array('label'=>'Manage Members', 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Créer des membres"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Gérer les membres"), 'url'=>array('admin')),
 );
 ?>
 

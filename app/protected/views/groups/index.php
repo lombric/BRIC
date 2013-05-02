@@ -3,7 +3,7 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Groups',
+	Yii::t('strings', "Groupes"),
 );
 
 $this->menu=array(

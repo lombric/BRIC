@@ -3,13 +3,13 @@
 /* @var $model Members */
 
 $this->breadcrumbs=array(
-	'Members'=>array('index'),
-	'Manage',
+	Yii::t('strings', "Membres")=>array('index'),
+	Yii::t('strings', 'Gérer')
 );
 
 $this->menu=array(
-	array('label'=>'List Members', 'url'=>array('index')),
-	array('label'=>'Create Members', 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Liste des membres"), 'url'=>array('index')),
+	array('label'=>Yii::t('strings', "Créer des membres"), 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Members</h1>
+<?php echo Yii::t('strings', "<h1>Gérer les membres</h1>"); ?>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
