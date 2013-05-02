@@ -31,7 +31,8 @@
 			if(Yii::app()->user->getId()===null) {
 				 $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
-					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest)
+					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Register', 'url'=>array('/members/register'), 'visible'=>Yii::app()->user->isGuest)
 					),
 				));
 			}
@@ -39,6 +40,7 @@
 				$this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
 					array('label'=>'Home', 'url'=>array('/site/index')),
+					array('label'=>'Dashboard', 'url'=>array('/site/dashboard')),
 					array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 					array('label'=>'Contact', 'url'=>array('/site/contact')),
 					array('label'=>'Group', 'url'=>array('/groups/index')),
