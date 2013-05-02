@@ -13,6 +13,7 @@ return array(
 	'preload'=>array('log'),
 
 	'sourceLanguage'=>'fr',
+	'language' => 'en',
 
 	// autoloading model and component classes
 	'import'=>array(

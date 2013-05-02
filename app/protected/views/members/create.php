@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>Yii::t('strings', "Liste des membres"), 'url'=>array('index')),
-	array('label'=>Yii::t('strings', "Gérer le membre"), 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Gérer les membres"), 'url'=>array('admin')),
 );
 ?>
 

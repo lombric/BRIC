@@ -10,12 +10,12 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>Yii::t('strings', "Liste des membres"), 'url'=>array('index')),
-	array('label'=>Yii::t('strings', "Créer des membres"), 'url'=>array('create')),
-	array('label'=>Yii::t('strings', "Voir les membres"), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('strings', "Créer un membre"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Voir le membre"), 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>Yii::t('strings', "Gérer les membres"), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Members <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('strings', "Mettre à jour le membre"); ?> <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

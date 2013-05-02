@@ -11,8 +11,8 @@ $this->menu=array(
 	array('label'=>Yii::t('strings', "Liste des membres"), 'url'=>array('index')),
 	array('label'=>Yii::t('strings', "Créer un membre"), 'url'=>array('create')),
 	array('label'=>Yii::t('strings', "Mettre à jour le membre"), 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>Yii::t('strings', "Supprimer le membre"), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>Yii::t('strings', "Gérer le membre"), 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Supprimer le membre"), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>Yii::t('strings', "Êtes-vous sûr de vouloir supprimer ce membre ?"))),
+	array('label'=>Yii::t('strings', "Gérer les membres"), 'url'=>array('admin')),
 );
 ?>
 
@@ -35,4 +35,6 @@ $this->menu=array(
 		'username',
 		'password',
 	),
-)); ?>
+)); 
+
+?>
