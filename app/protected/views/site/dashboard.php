@@ -10,9 +10,12 @@ foreach(Yii::app()->user->user->membersgroups as $a){
 	$s .= CHtml::link(CHtml::encode($a->groups->name), array('groups/view', 'id'=>$a->groups->id))." ";
 	$count++;
 }
-if($count<2)
-	$r = "Tu es membre du groupe suivant: " . $s;
-else
-	$r = "Tu es membre des groupes suivants: " . $s;
-
-echo substr($r, 0, -2)."."; ?>  
+if($count == 0)
+	echo "Tu n'es membre d'aucun groupe.";
+else{
+	if($count<2)
+		$r = "Tu es membre du groupe suivant: " . $s;
+	else
+		$r = "Tu es membre des groupes suivants: " . $s;
+	echo substr($r, 0, -2).".";
+}?>  
