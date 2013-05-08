@@ -17,7 +17,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'name'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Nom du groupe')); ?>
 		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
@@ -27,27 +27,27 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'specifications'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Spécifications')); ?>
 		<?php echo $form->textArea($model,'specifications',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'parent_id'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'ID du parent')); ?>
 		<?php echo $form->textField($model,'parent_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'hide'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Caché')); ?>
 		<?php echo $form->textField($model,'hide'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'system'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Système')); ?>
 		<?php echo $form->textField($model,'system'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton(Yii::t('strings', 'Recherche')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

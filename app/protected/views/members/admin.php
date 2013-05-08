@@ -28,7 +28,6 @@ $('.search-form form').submit(function(){
 
 <?php echo Yii::t('strings', "<h1>Gérer les membres</h1>"); ?>
 
-
 <?php echo Yii::t('strings', "<p>Vous pouvez également entrer des opérateurs de comparaison (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> ou <b>=</b>) au début de chacunes de vos valeurs de recherche pour spécifier comment la comparaison doit être effectuée.</p>"); ?>
 
 <?php echo CHtml::link(Yii::t('strings', "Recherche avancée"),'#',array('class'=>'search-button')); ?>

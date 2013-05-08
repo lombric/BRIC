@@ -90,7 +90,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('strings', 'Créer') : Yii::t('strings', 'Sauver')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Groups', 'url'=>array('index')),
-	array('label'=>'Create Groups', 'url'=>array('create')),
-	array('label'=>'Update Groups', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Groups', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Groups', 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Liste des groupes"), 'url'=>array('index')),
+	array('label'=>Yii::t('strings', "Créer un groupe"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Mettre à jour le groupe"), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('strings', "Supprimer le groupe"), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>Yii::t('strings', "Êtes-vous sûr de vouloir supprimer ce groupe ?"))),
+	array('label'=>Yii::t('strings', "Gérer les groupes"), 'url'=>array('admin')),
 );
 ?>
 

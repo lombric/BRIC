@@ -3,19 +3,19 @@
 /* @var $model Groups */
 
 $this->breadcrumbs=array(
-	'Groups'=>array('index'),
-	$model->name=>array('view','id'=>$model->id),
+	Yii::t('strings', "Groupes")=>array('index'),
+	$model->id=>array('view','id'=>$model->id),
 	'Update',
 );
 
 $this->menu=array(
-	array('label'=>'List Groups', 'url'=>array('index')),
-	array('label'=>'Create Groups', 'url'=>array('create')),
-	array('label'=>'View Groups', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Groups', 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Liste des groupes"), 'url'=>array('index')),
+	array('label'=>Yii::t('strings', "Créer un groupe"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Voir le groupe"), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('strings', "Gérer les groupes"), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Groups <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('strings', "Mettre à jour le groupe"); ?> <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
