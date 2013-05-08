@@ -39,21 +39,11 @@
 			else {
 				$this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
-<<<<<<< HEAD
-					array('label'=>'Home', 'url'=>array('/site/index')),
-					array('label'=>'Dashboard', 'url'=>array('/site/dashboard')),
-					array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-					array('label'=>'Contact', 'url'=>array('/site/contact')),
-					array('label'=>'Group', 'url'=>array('/groups/index')),
-					array('label'=>'Members', 'url'=>array('/members/index')),
-=======
 					array('label'=>Yii::t('strings', "Accueil"), 'url'=>array('/site/index')),
 					array('label'=>Yii::t('strings', "À propos"), 'url'=>array('/site/page', 'view'=>'about')),
 					array('label'=>Yii::t('strings', "Contact"), 'url'=>array('/site/contact')),
 					array('label'=>Yii::t('strings', "Groupes"), 'url'=>array('/groups/index')),
 					array('label'=>Yii::t('strings', "Membres"), 'url'=>array('/members/index')),
->>>>>>> origin/Translation
-					
 					array('label'=>Yii::t('strings', "Connexion"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>Yii::t("strings", "Déconnexion").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 					),

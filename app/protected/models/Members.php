@@ -111,16 +111,9 @@ class Members extends CActiveRecord
 			'phone' => Yii::t('strings', 'Téléphone'),
 			'description' => 'Description',
 			'status' => 'Status',
-<<<<<<< HEAD
-			'username' => 'Username',
-			'password' => 'Password',
-			// external relation
 			'groups' => 'groups',
-			
-=======
 			'username' => Yii::t('strings', "Nom d'utilisateur"),
 			'password' => Yii::t('strings', 'Mot de passe'),
->>>>>>> origin/Translation
 		);
 	}
 
