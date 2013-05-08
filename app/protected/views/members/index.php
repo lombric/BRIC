@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Members',
+	Yii::t('strings', "Membres"),
 );
 
 $this->menu=array(
-	array('label'=>'Create Members', 'url'=>array('create')),
-	array('label'=>'Manage Members', 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Créer un membre"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Gérer les membres"), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Members</h1>
+<?php echo Yii::t('strings', "<h1>Membres</h1>"); ?>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

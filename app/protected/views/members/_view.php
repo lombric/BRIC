@@ -1,6 +1,7 @@
 <?php
 /* @var $this MembersController */
 /* @var $data Members */
+
 ?>
 
 <div class="view">
@@ -9,11 +10,11 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('firstname')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Nom'))); ?>:</b>
 	<?php echo CHtml::encode($data->firstname); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('lastname')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Prénom'))); ?>:</b>
 	<?php echo CHtml::encode($data->lastname); ?>
 	<br />
 
@@ -21,15 +22,15 @@
 	<?php echo CHtml::encode($data->email); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('city')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Ville'))); ?>:</b>
 	<?php echo CHtml::encode($data->city); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('address')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Adresse'))); ?>:</b>
 	<?php echo CHtml::encode($data->address); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('zip')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'NPA'))); ?>:</b>
 	<?php echo CHtml::encode($data->zip); ?>
 	<br />
 	

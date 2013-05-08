@@ -2,6 +2,7 @@
 /* @var $this MembersController */
 /* @var $model Members */
 /* @var $form CActiveForm */
+
 ?>
 
 <div class="wide form">
@@ -17,12 +18,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'firstname'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Nom')); ?>
 		<?php echo $form->textField($model,'firstname',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'lastname'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Prénom')); ?>
 		<?php echo $form->textField($model,'lastname',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
@@ -32,27 +33,27 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'city'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Ville')); ?>
 		<?php echo $form->textField($model,'city',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'address'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Adresse')); ?>
 		<?php echo $form->textField($model,'address',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'zip'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'NPA')); ?>
 		<?php echo $form->textField($model,'zip',array('size'=>8,'maxlength'=>8)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'mobile_phone'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Mobile')); ?>
 		<?php echo $form->textField($model,'mobile_phone',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'phone'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Téléphone')); ?>
 		<?php echo $form->textField($model,'phone',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
@@ -67,12 +68,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'username'); ?>
+		<?php echo $form->label($model,Yii::t('strings', "Nom d'utilisateur")); ?>
 		<?php echo $form->textField($model,'username',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton(Yii::t('strings', 'Recherche')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

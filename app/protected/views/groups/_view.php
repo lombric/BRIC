@@ -9,7 +9,7 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Nom du groupe'))); ?>:</b>
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
 
@@ -17,19 +17,19 @@
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('specifications')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Spécification'))); ?>:</b>
 	<?php echo CHtml::encode($data->specifications); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('parent_id')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'ID du parent'))); ?>:</b>
 	<?php echo CHtml::encode($data->parent_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('hide')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Caché'))); ?>:</b>
 	<?php echo CHtml::encode($data->hide); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('system')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Système'))); ?>:</b>
 	<?php echo CHtml::encode($data->system); ?>
 	<br />
 

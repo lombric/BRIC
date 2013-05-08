@@ -11,12 +11,12 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<?php echo Yii::t('strings', '<p class="note">Les champs avec une <span class="required">*</span> sont obligatoires.</p>'); ?>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->labelEx($model,Yii::t('strings', 'Nom du groupe')); ?>
 		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
@@ -28,14 +28,14 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'specifications'); ?>
+		<?php echo $form->labelEx($model,Yii::t('strings', 'Spécifications')); ?>
 		<?php echo $form->textArea($model,'specifications',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'specifications'); ?>
 	</div>
 
 
     <div class="row">
-        <?php echo $form->labelEx($model,'Sub Group'); ?>
+        <?php echo $form->labelEx($model,Yii::t('strings', 'Sous-groupes')); ?>
 		<?php echo $form->dropDownList($model, 'id',
 				CHtml::listData(Groups::model()->findAll(), 'id', 'name'), array('empty'=>'Selectionnez')
             );
@@ -45,19 +45,19 @@
 
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'hide'); ?>
+		<?php echo $form->labelEx($model,Yii::t('strings', 'Caché')); ?>
 		<?php echo $form->checkBox($model,'hide'); ?>
 		<?php echo $form->error($model,'hide'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'system'); ?>
+		<?php echo $form->labelEx($model,Yii::t('strings', 'Système')); ?>
 		<?php echo $form->checkBox($model,'system'); ?>
 		<?php echo $form->error($model,'system'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('strings', 'Créer') : Yii::t('strings', 'Sauver')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

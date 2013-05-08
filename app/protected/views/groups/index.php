@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Groups',
+	Yii::t('strings', "Groupes"),
 );
 
 $this->menu=array(
-	array('label'=>'Create Groups', 'url'=>array('create')),
-	array('label'=>'Manage Groups', 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Créer un groupe"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Gérer les groupes"), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Groups</h1>
+<?php echo Yii::t('strings', "<h1>Groupes</h1>"); ?>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

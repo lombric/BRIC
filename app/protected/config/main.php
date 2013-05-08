@@ -12,12 +12,23 @@ return array(
     // preloading 'log' component
     'preload'=>array('log'),
 
+<<<<<<< HEAD
     // autoloading model and component classes
     'import'=>array(
         'application.models.*',
         'application.components.*',
         'ext.giix.components.*', // giix components
     ),
+=======
+	'sourceLanguage'=>'fr',
+	'language' => 'en',
+
+	// autoloading model and component classes
+	'import'=>array(
+		'application.models.*',
+		'application.components.*',
+	),
+>>>>>>> origin/Translation
 
     'modules'=>array(
         

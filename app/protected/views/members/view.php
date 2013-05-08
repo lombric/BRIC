@@ -3,20 +3,20 @@
 /* @var $model Members */
 
 $this->breadcrumbs=array(
-	'Members'=>array('index'),
+	Yii::t('strings', "Membres")=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List Members', 'url'=>array('index')),
-	array('label'=>'Create Members', 'url'=>array('create')),
-	array('label'=>'Update Members', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Members', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Members', 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "Liste des membres"), 'url'=>array('index')),
+	array('label'=>Yii::t('strings', "Créer un membre"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "Mettre à jour le membre"), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('strings', "Supprimer le membre"), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>Yii::t('strings', "Êtes-vous sûr de vouloir supprimer ce membre ?"))),
+	array('label'=>Yii::t('strings', "Gérer les membres"), 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Members #<?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('strings', "Voir le membre"); ?> #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -35,4 +35,6 @@ $this->menu=array(
 		'username',
 		'password',
 	),
-)); ?>
+)); 
+
+?>
