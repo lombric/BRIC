@@ -55,6 +55,14 @@
 		'Confirmation' => 'Insert your password again',
 		"S'enregistrer" => 'Register',
 		'Sauvegarder' => 'Save',
-		'Recherche' => 'Search'
+		'Recherche' => 'Search',
+
+		//Contact
+		'Sujet' => 'Subject',
+		'Message' => 'Body',
+		'Code de vérification' => 'Verification Code',
+		"S'il vous plaît, veuillez entrer les lettres telles qu'elles figurent dans l'image ci-dessus.<br/>Les lettres ne sont pas sensibles à la casse.</div>" => '<div class="hint">Please enter the letters as they are shown in the image above.<br/>Letters are not case-sensitive.</div>',
+		"Envoyer" => "Submit",
+		'Nous contacter' => 'Contact Us'
 	);
 ?>
