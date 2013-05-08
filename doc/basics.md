@@ -23,13 +23,21 @@ There is a command to reset the database. All the datas and the structure will b
 For that, use the Windows command prompt and go to the **app/protected/** directory.
 Use the yiic command with the parameter **resetdb** and that's all. Now, the structure is reimported but not the datas.
 
-If you specify another parameter, it will be used to specify that you want importe the datas after the structure. This parameter is the name of the old database.
+If you specify the parameter **with-datas**, it will be used to specify that you want importe the datas after the structure.
 
 *Ex : reset the structure : **yiic resetdb***
 
-*Ex : reset the structure and importe the datas from the old database : **yiic resetdb lombric_old***
+*Ex : reset the structure and importe the datas from the old database : **yiic resetdb with-datas***
 
 The script use the **console-main.php** configuration file for the database connection.
+
+
+#####Default#####
+
+There is a default user in the database :
+
+- Name : **admin**
+- Password : **admin**
 
 
 ###GIIX###
