@@ -5,15 +5,19 @@ Basics
 
 ###Database###
 
-#####Structure and datas#####
+#####Structure, datas and defaults#####
 
 For the database, work only in the **/database** directory.
 
 The file **structure.sql** is an SQL script who is install the sctructure (only the structure) of the database.
 
-The datas is comming from the old lombric database and there is few PHP script for the migration. This files are prefixed by **datas.**. The code use the Yii Framework classes.
+The datas is comming from the old lombric database and there is few PHP script for the migration. This files are prefixed by **datas.** and the PHP code use the Yii Framework functions.
 
 If you want to add a new script, create a new file like **datas.*table_name*.php**. When you've finished, add the *require_once('file');* line to the **datas.php** file (the ordre of the require instructions is important).
+
+A last file named **defaults.sql** is executed in last step. This one contains only SQL commands and serves to insert some datas in the database which are used by the developers. An example is to insert an admin account.
+
+If you want edit the command PHP script, this one is located in the file **/app/protected/commands/ResetDbCommand.php**.
 
 
 #####ResetDB Command#####
@@ -32,7 +36,7 @@ If you specify the parameter **with-datas**, it will be used to specify that you
 The script use the **console-main.php** configuration file for the database connection.
 
 
-#####Default#####
+#####Defaults#####
 
 There is a default user in the database :
 
