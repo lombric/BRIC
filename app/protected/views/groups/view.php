@@ -16,17 +16,50 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('strings', "View Groups"); ?> #<?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('strings', "View Groups"); ?> <?php echo $model->name; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php 
+$aParams = array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'name',
 		'description',
-		'specifications',
-		'parent_id',
-		'hide',
-		'system',
-	),
-)); ?>
+		'specifications'
+	)
+);
+//die(CHtml::link(CHtml::encode($model->admin->lastname), array('./', 'members'=>$model->admin->id)));
+// Has admin, parent or children ?
+if (isset($model->admin->id) && is_numeric($model->admin->id)) {
+	array_push($aParams['attributes'], 
+		array( 
+			'label'=>'Admin',
+			'type'=>'raw',
+			'value'=>CHtml::link(CHtml::encode($model->admin->firstname . ' ' . $model->admin->lastname), array('./', 'members'=>$model->admin->id))
+		)
+	);
+}
+if (isset($model->ancestor->id) && is_numeric($model->ancestor->id)) {
+	array_push($aParams['attributes'], 
+		array( 
+			'label'=>'Parent',
+			'type'=>'raw',
+			'value'=>CHtml::link(CHtml::encode($model->ancestor->name), array('view', 'id'=>$model->ancestor->id))
+		)
+	);
+}
+if (isset($model->children[0]->id) && is_numeric($model->children[0]->id)) {
+	$sLabel = 'Sous-groupes';
+	for ($i = 0; $i < count($model->children); $i++) {
+		array_push($aParams['attributes'], 
+			array(
+				'label'=>$sLabel,
+				'type'=>'raw',
+				'value'=>CHtml::link(CHtml::encode($model->children[$i]->name), array('view', 'id'=>$model->children[$i]->id))
+			)
+		);
+		$sLabel = '';
+	}
+	
+}
+
+$this->widget('zii.widgets.CDetailView', $aParams); ?>

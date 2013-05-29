@@ -62,10 +62,11 @@ class Groups extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'parent' => array(self::BELONGS_TO, 'Groups', 'parent_id'),
-			'groups' => array(self::HAS_MANY, 'Groups', 'parent_id'),
-			'membersgroups' => array(self::HAS_MANY, 'MembersGroups', 'group_id'),
-			
+			'ancestor' => array(self::BELONGS_TO, 'Groups', 'parent_id'),
+			'children' => array(self::HAS_MANY, 'Groups', 'parent_id'),
+			'roles' => array(self::HAS_MANY, 'MembersGroups', 'group_id'),
+			'members' => array(self::HAS_MANY, 'Members', array('member_id'=>'id'), 'through'=>'roles'),
+			'admin' => array(self::HAS_ONE, 'Members', array('member_id'=>'id'), 'through'=>'roles', 'condition'=>'is_admin=true'),
 		);
 	}
 
@@ -82,6 +83,8 @@ class Groups extends CActiveRecord
 			'parent_id' => Yii::t('strings', 'Parent ID'),
 			'hide' => Yii::t('strings', 'Hide'),
 			'system' => Yii::t('strings', 'System'),
+			'ancestor' => 'Parent',
+			'children' => 'Sous-groupes',
 		);
 	}
 

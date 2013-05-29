@@ -10,6 +10,7 @@ $this->menu=array(
 	array('label'=>Yii::t('strings', "Create Group"), 'url'=>array('create')),
 	array('label'=>Yii::t('strings', "Manage Groups"), 'url'=>array('admin')),
 );
+
 ?>
 
 <h1><?php echo Yii::t('strings', "Groups"); ?></h1>
