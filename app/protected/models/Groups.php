@@ -76,12 +76,12 @@ class Groups extends CActiveRecord
 	{
 		return array(
 			'id' => 'Id',
-			'name' => Yii::t('strings', 'Nom du groupe'),
+			'name' => Yii::t('strings', 'Name'),
 			'description' => 'Description',
-			'specifications' => Yii::t('strings', 'Spécifications'),
-			'parent_id' => 'Parent',
-			'hide' => Yii::t('strings', 'Caché'),
-			'system' => Yii::t('strings', 'Système'),
+			'specifications' => Yii::t('strings', 'Specifications'),
+			'parent_id' => Yii::t('strings', 'Parent ID'),
+			'hide' => Yii::t('strings', 'Hide'),
+			'system' => Yii::t('strings', 'System'),
 		);
 	}
 

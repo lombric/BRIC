@@ -101,19 +101,19 @@ class Members extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'firstname' => Yii::t('strings', 'Nom'),
-			'lastname' => Yii::t('strings', 'Prénom'),
+			'firstname' => Yii::t('strings', 'Firstname'),
+			'lastname' => Yii::t('strings', 'Lastname'),
 			'email' => 'Email',
-			'city' => Yii::t('strings', 'Ville'),
-			'address' => Yii::t('strings', 'Adresse'),
-			'zip' => Yii::t('strings', 'NPA'),
-			'mobile_phone' => Yii::t('strings', 'Mobile'),
-			'phone' => Yii::t('strings', 'Téléphone'),
+			'city' => Yii::t('strings', 'City'),
+			'address' => Yii::t('strings', 'Address'),
+			'zip' => Yii::t('strings', 'Zip'),
+			'mobile_phone' => Yii::t('strings', 'Mobile phone'),
+			'phone' => Yii::t('strings', 'Phone'),
 			'description' => 'Description',
 			'status' => 'Status',
-			'groups' => 'groups',
-			'username' => Yii::t('strings', "Nom d'utilisateur"),
-			'password' => Yii::t('strings', 'Mot de passe'),
+			'groups' => Yii::t('strings', 'Groups'),
+			'username' => Yii::t('strings', "Username"),
+			'password' => Yii::t('strings', 'Password'),
 		);
 	}
 

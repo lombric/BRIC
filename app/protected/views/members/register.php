@@ -3,11 +3,11 @@
 /* @var $model Members */
 
 $this->breadcrumbs=array(
-	Yii::t('strings', "Inscription"),
+	Yii::t('strings', "Register"),
 );
 
 ?>
 
-<?php echo Yii::t('strings', "<h1>Nouveau membre</h1>"); ?>
+<h1><?php echo Yii::t('strings', "New Member"); ?></h1>
 
 <?php echo $this->renderPartial('_register', array('model'=>$model)); ?>

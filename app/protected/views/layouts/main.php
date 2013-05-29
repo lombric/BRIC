@@ -31,21 +31,22 @@
 			if(Yii::app()->user->getId()===null) {
 				 $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
-					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>'Register', 'url'=>array('/members/register'), 'visible'=>Yii::app()->user->isGuest)
+					array('label'=>Yii::t('strings', "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>Yii::t('strings', "Register"), 'url'=>array('/members/register'), 'visible'=>Yii::app()->user->isGuest)
 					),
 				));
 			}
 			else {
 				$this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
-					array('label'=>Yii::t('strings', "Accueil"), 'url'=>array('/site/index')),
-					array('label'=>Yii::t('strings', "À propos"), 'url'=>array('/site/page', 'view'=>'about')),
+					array('label'=>Yii::t('strings', "Home"), 'url'=>array('/site/index')),
+					array('label'=>Yii::t('strings', "Dashboard"), 'url'=>array('/site/dashboard')),
+					array('label'=>Yii::t('strings', "About"), 'url'=>array('/site/page', 'view'=>'about')),
 					array('label'=>Yii::t('strings', "Contact"), 'url'=>array('/site/contact')),
-					array('label'=>Yii::t('strings', "Groupes"), 'url'=>array('/groups/index')),
-					array('label'=>Yii::t('strings', "Membres"), 'url'=>array('/members/index')),
-					array('label'=>Yii::t('strings', "Connexion"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>Yii::t("strings", "Déconnexion").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+					array('label'=>Yii::t('strings', "Groups"), 'url'=>array('/groups/index')),
+					array('label'=>Yii::t('strings', "Members"), 'url'=>array('/members/index')),
+					array('label'=>Yii::t('strings', "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>Yii::t("strings", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 					),
 				)); 
 			}
