@@ -67,7 +67,7 @@ class ResetDbCommand extends CConsoleCommand{
         $t = $this->db->beginTransaction();
         try{
             echo "\n-INSERTING DEFAULT ";
-            $this->db->createCommand("INSERT INTO `members` (`firstname`, `lastname`, `email`, `status`, `username`, `password`) VALUES ('admin', 'admin', 'admin@app.local', 'active', 'admin', 'admin');")->execute();
+            $this->executeScript('../../../database/defaults.sql');
             $t->commit();
             echo "[OK]";
         }
