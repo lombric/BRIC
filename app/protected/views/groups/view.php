@@ -19,55 +19,47 @@ $this->menu=array(
 <h1>Groupe "<?php echo $model->name; ?>"</h1>
 
 <?php 
-
-// Has parent or children ?
-if (isset($model->ancestor->id) && is_numeric($model->ancestor->id)) {
-	$aParams = array(
-		'data'=>$model,
-		'attributes'=>array(
-			'name',
-			'description',
-			'specifications',
-			array(
-				'label'=>'Parent',
-				'type'=>'raw',
-				'value'=>CHtml::link(CHtml::encode($model->ancestor->name), array('view', 'id'=>$model->ancestor->id))
-			)
+$aParams = array(
+	'data'=>$model,
+	'attributes'=>array(
+		'name',
+		'description',
+		'specifications'
+	)
+);
+//die(CHtml::link(CHtml::encode($model->admin->lastname), array('./', 'members'=>$model->admin->id)));
+// Has admin, parent or children ?
+if (isset($model->admin->id) && is_numeric($model->admin->id)) {
+	array_push($aParams['attributes'], 
+		array( 
+			'label'=>'Admin',
+			'type'=>'raw',
+			'value'=>CHtml::link(CHtml::encode($model->admin->firstname . ' ' . $model->admin->lastname), array('./', 'members'=>$model->admin->id))
 		)
 	);
 }
-elseif (isset($model->children[0]->id) && is_numeric($model->children[0]->id)) {
-	$aParams = array(
-		'data'=>$model,
-		'attributes'=>array(
-			'name',
-			'description',
-			'specifications'
+if (isset($model->ancestor->id) && is_numeric($model->ancestor->id)) {
+	array_push($aParams['attributes'], 
+		array( 
+			'label'=>'Parent',
+			'type'=>'raw',
+			'value'=>CHtml::link(CHtml::encode($model->ancestor->name), array('view', 'id'=>$model->ancestor->id))
 		)
 	);
-	
+}
+if (isset($model->children[0]->id) && is_numeric($model->children[0]->id)) {
 	$sLabel = 'Sous-groupes';
 	for ($i = 0; $i < count($model->children); $i++) {
 		array_push($aParams['attributes'], 
-		array(
-			'label'=>$sLabel,
-			'type'=>'raw',
-			'value'=>CHtml::link(CHtml::encode($model->children[$i]->name), array('view', 'id'=>$model->children[$i]->id))
-		));
-		
+			array(
+				'label'=>$sLabel,
+				'type'=>'raw',
+				'value'=>CHtml::link(CHtml::encode($model->children[$i]->name), array('view', 'id'=>$model->children[$i]->id))
+			)
+		);
 		$sLabel = '';
 	}
 	
-}
-else {
-	$aParams = array(
-		'data'=>$model,
-		'attributes'=>array(
-			'name',
-			'description',
-			'specifications'
-		)
-	);
 }
 
 $this->widget('zii.widgets.CDetailView', $aParams); ?>
