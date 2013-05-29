@@ -1,0 +1,1 @@
+INSERT INTO `members` (`firstname`, `lastname`, `email`, `status`, `username`, `password`) VALUES ('admin', 'admin', 'admin@app.local', 'active', 'admin', 'admin');

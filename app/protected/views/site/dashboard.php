@@ -10,6 +10,7 @@ foreach(Yii::app()->user->user->membersgroups as $a){
 	$s .= CHtml::link(CHtml::encode($a->groups->name), array('groups/view', 'id'=>$a->groups->id))." ";
 	$count++;
 }
+
 if($count == 0)
 	echo Yii::t('strings', 'You are not a member of any groups');
 else{
