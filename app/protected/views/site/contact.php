@@ -34,7 +34,7 @@ $this->breadcrumbs=array(
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Firstname')); ?>
+		<?php echo $form->labelEx($model, 'name', array('title' => Yii::t('strings', 'name'))); ?>
 		<?php echo $form->textField($model,'name'); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
@@ -46,20 +46,20 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Subject')); ?>
+		<?php echo $form->labelEx($model, 'subject', array('title' => Yii::t('strings', 'subject'))); ?>
 		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'subject'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Body')); ?>
+		<?php echo $form->labelEx($model, 'body', array('title' => Yii::t('strings', 'body'))); ?>
 		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'body'); ?>
 	</div>
 
 	<?php if(CCaptcha::checkRequirements()): ?>
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Verification Code')); ?>
+		<?php echo $form->labelEx($model, 'VerificationCode', array('title' => Yii::t('strings', 'Verification Code'))); ?>
 		<div>
 		<?php $this->widget('CCaptcha'); ?>
 		<?php echo $form->textField($model,'verifyCode'); ?>
