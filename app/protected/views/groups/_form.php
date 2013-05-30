@@ -16,7 +16,7 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Name')); ?>
+		<?php echo $form->labelEx($model, 'name', array('title' => Yii::t('strings', 'name'))); ?>
 		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
@@ -28,7 +28,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Specifications')); ?>
+		<?php echo $form->labelEx($model, 'Specifications', array('title' => Yii::t('strings', 'Specifications'))); ?>
 		<?php echo $form->textArea($model,'specifications',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'specifications'); ?>
 	</div>
