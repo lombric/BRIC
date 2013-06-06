@@ -6,7 +6,7 @@ return array(
             'connectionString' => 'mysql:host=localhost;dbname=lombric',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => '',
+            'password' => 'dsa321',
             'charset' => 'utf8',
         ),
     ),

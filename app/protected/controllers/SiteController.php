@@ -1,10 +1,9 @@
 <?php
 
-class SiteController extends AccessController
+class SiteController extends Controller
 {
-	/**
-	 * Declares class-based actions.
-	 */
+
+	public $defaultAction = 'dashboard';
 
 	public function accessRules(){
         $rules=parent::accessRules();
