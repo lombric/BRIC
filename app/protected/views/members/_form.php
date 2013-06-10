@@ -52,7 +52,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'Mobile phone', array('title' => Yii::t('strings', 'Mobile phone'))); ?>
+		<?php echo $form->labelEx($model, 'mobile_phone', array('title' => Yii::t('strings', 'Mobile phone'))); ?>
 		<?php echo $form->textField($model,'mobile_phone',array('size'=>20,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'mobile_phone'); ?>
 	</div>
@@ -70,7 +70,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Status'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Status')); ?>
 		<?php echo $form->dropDownList($model, 'status', array('new' => 'Nouveau','actif'=>'Actif', 'old' => 'Ancien')
 			
             ); ?>

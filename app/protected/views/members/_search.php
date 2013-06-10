@@ -63,12 +63,12 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'Status'); ?>
+		<?php echo $form->label($model,Yii::t('strings', 'Status')); ?>
 		<?php echo $form->textField($model,'status',array('size'=>6,'maxlength'=>6)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,Yii::t('strings', "Username")); ?>
+		<?php echo $form->label($model, 'username', array('title' => Yii::t('strings', 'Username'))); ?>
 		<?php echo $form->textField($model,'username',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 

@@ -59,7 +59,7 @@ $this->breadcrumbs=array(
 
 	<?php if(CCaptcha::checkRequirements()): ?>
 	<div class="row">
-		<?php echo $form->labelEx($model, 'VerificationCode', array('title' => Yii::t('strings', 'Verification Code'))); ?>
+		<?php echo $form->labelEx($model, 'verifyCode', array('title' => Yii::t('strings', 'verification code'))); ?>
 		<div>
 		<?php $this->widget('CCaptcha'); ?>
 		<?php echo $form->textField($model,'verifyCode'); ?>
