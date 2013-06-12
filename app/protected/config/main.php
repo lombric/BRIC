@@ -21,8 +21,8 @@ return array(
         'ext.giix.components.*', // giix components
     ),
 
-	'sourceLanguage'=>'fr',
-	//'language' => 'en',
+	'sourceLanguage'=>'en',
+	'language' => 'fr',
 
     'modules'=>array(
         
