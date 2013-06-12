@@ -6,7 +6,7 @@
 	<meta name="language" content="en" />
 
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
-	
+
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 	<?php Yii::app()->bootstrap->register(); ?>
@@ -14,46 +14,25 @@
 
 <body>
 
-<?php
-$isInTeam = isset(Yii::app()->user->user) && Yii::app()->user->user->IsInTeam();
-
-$this->widget('bootstrap.widgets.TbNavbar', array(
-    'type'=>'inverse', // null or 'inverse'
-    'brand'=> Yii::app()->name,
-    'brandUrl'=>'.',
-    'collapse'=>true, // requires bootstrap-responsive.css
+<?php $this->widget('bootstrap.widgets.TbNavbar',array(
     'items'=>array(
         array(
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
-            	// Dashboard
-                array('label'=>'Dashboard', 'url'=>Yii::app()->createUrl("/dashboard"), 'visible'=>$isInTeam),
-            	// Enfants
-            	array('label'=>'Enfants', 'url'=>'#', 'visible'=>!Yii::app()->user->IsGuest, 'items'=>array(
-            			array('label'=>'Annuaire', 'url'=>Yii::app()->createUrl("/children")),
-            			array('label'=>'Créer', 'url'=>Yii::app()->createUrl("/children/create")),
-            			array('label'=>'Trombinoscope', 'url'=>Yii::app()->createUrl("/children/gallery")),
-            	)),
-            	//Reports
-            	array('label'=>'Rapports', 'url'=>'#', 'visible'=>$isInTeam, 'items'=>array(
-            			array('label'=>'Créer', 'url'=>Yii::app()->createUrl("/report/create")),
-            			array('label'=>'Liste', 'url'=>Yii::app()->createUrl("/report")),
-            			array('label'=>'Validation', 'url'=>Yii::app()->createUrl("/dashboard")),
-            	)),
-            ),
-        ),
-        array(
-            'class'=>'bootstrap.widgets.TbMenu',
-            'htmlOptions'=>array('class'=>'pull-right'),
-            'items'=>array(
-				array('label'=> !Yii::app()->user->isGuest ? Yii::app()->user->user->Firstname .' '. Yii::app()->user->user->Lastname : '', 'url'=>'#', 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'itemOptions'=> array('id'=>'sign_in'), 'active'=>false, 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout', 'url'=>array('/site/logout'), 'itemOptions'=> array('id'=>'sign_in'), 'active'=>false, 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Register', 'url'=>array('/members/register'),'visible'=>Yii::app()->user->isGuest),
+				
+                array('label'=>'Dashboard', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Contact', 'url'=>array('/site/contact'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Members', 'url'=>array('/members/'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Groups', 'url'=>array('/groups/'),'visible'=>!Yii::app()->user->isGuest),
+           
+                
+                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
             ),
         ),
     ),
-));
-?>
+)); ?>
 
 <div class="container" id="page">
 
@@ -68,8 +47,9 @@ $this->widget('bootstrap.widgets.TbNavbar', array(
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y') . ' ' . Yii::app()->name; ?>.<br/>
-		All Rights Reserved.
+		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		All Rights Reserved.<br/>
+		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
 </div><!-- page -->
