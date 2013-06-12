@@ -37,22 +37,26 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'groups-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'name',
-		'description',
-		'specifications',
-		'parent_id',
-		'hide',
-		/*
-		'system',
-		*/
-		array(
-			'class'=>'CButtonColumn',
+ <?php
+$this->widget ( 'bootstrap.widgets.TbGridView', array (
+		'type' => 'condensed striped',
+		'dataProvider' => $model->search(),
+		'filter' => $model,
+		'template' => "{summary}{items}{pager}",
+		'summaryText' => 'Displaying {start}-{end} of {count} results.',
+		'columns' => array (	
+			'id',
+			'name',
+			'description',
+			'specifications',
+			'parent_id',
+			'hide',
+			/*
+			'system',
+			*/
+			array(
+				'class'=>'CButtonColumn',
+			),
 		),
-	),
-)); ?>
+) );?>
+

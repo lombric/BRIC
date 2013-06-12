@@ -39,8 +39,7 @@
 			else {
 				$this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
-					array('label'=>Yii::t('strings', "Accueil"), 'url'=>array('/site/index')),
-					array('label'=>Yii::t('strings', "À propos"), 'url'=>array('/site/page', 'view'=>'about')),
+					array('label'=>'Dashboard', 'url'=>array('/site/dashboard')),
 					array('label'=>Yii::t('strings', "Contact"), 'url'=>array('/site/contact')),
 					array('label'=>Yii::t('strings', "Groupes"), 'url'=>array('/groups/index')),
 					array('label'=>Yii::t('strings', "Membres"), 'url'=>array('/members/index')),

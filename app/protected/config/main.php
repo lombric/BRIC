@@ -1,39 +1,47 @@
 <?php
 
 // uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
+Yii::setPathOfAlias('bootstrap',realpath(dirname(__FILE__) . "../../extensions/bootstrap"));
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-    'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+    'basePath'=>realpath(dirname(__FILE__). "../../"),
     'name'=>'Lombric Application',
-
-    // preloading 'log' component
-    'preload'=>array('log'),
+	'theme'=>'bootstrap',
+	'defaultController'=>'site',
+	
+	// General configuration
+	'charset'=>'utf-8',
+    'sourceLanguage'=>'fr_fr',
+	
+	// preloading 'log' component
+    'preload'=>array(
+		'log',
+		'bootstrap',
+	),
 
     // autoloading model and component classes
     'import'=>array(
         'application.models.*',
         'application.components.*',
-        'ext.giix.components.*', // giix components
+		'ext.giix.components.*', // giix components
     ),
-	'sourceLanguage'=>'fr',
+	
 	//'language' => 'en',
     'modules'=>array(
-        
         'gii'=>array(
             'class'=>'system.gii.GiiModule',
             'password'=>'',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters'=>array('127.0.0.1','::1'),
             'generatorPaths' => array(
-                'ext.giix.generators', // giix generators
+				'ext.giix.generators', // giix generators
             ),
         ),
 
     ),
-
+	
     // application components
     'components'=>array(
         'user'=>array(
@@ -41,7 +49,6 @@ return array(
             'allowAutoLogin'=>true,
         ),
         // uncomment the following to enable URLs in path-format
-        
         'urlManager'=>array(
             'urlFormat'=>'path',
             'rules'=>array(
@@ -90,6 +97,9 @@ return array(
                 'giix' => 'ext.giix.messages',
             ),
         ),*/
+		'bootstrap' => array(
+			'class' => 'bootstrap.components.Bootstrap',
+		),
     ),
 
     // application-level parameters that can be accessed
