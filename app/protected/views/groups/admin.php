@@ -3,13 +3,13 @@
 /* @var $model Groups */
 
 $this->breadcrumbs=array(
-	Yii::t('strings', "Groupes")=>array('index'),
-	Yii::t('strings', 'Gérer')
+	Yii::t('strings', "Groups")=>array('index'),
+	Yii::t('strings', 'Manage')
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('strings', "Liste des groupes"), 'url'=>array('index')),
-	array('label'=>Yii::t('strings', "Créer un groupe"), 'url'=>array('create')),
+	array('label'=>Yii::t('strings', "List Groups"), 'url'=>array('index')),
+	array('label'=>Yii::t('strings', "Create Group"), 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,11 +26,11 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<?php echo Yii::t('strings', "<h1>Gérer les groupes</h1>"); ?>
+<h1><?php echo Yii::t('strings', "Manage Groups"); ?></h1>
 
-<?php echo Yii::t('strings', "<p>Vous pouvez également entrer des opérateurs de comparaison (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> ou <b>=</b>) au début de chacunes de vos valeurs de recherche pour spécifier comment la comparaison doit être effectuée.</p>"); ?>
+<p><?php echo Yii::t('strings', "You may optionally enter a comparison operator "); ?>(<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>or <b>=</b>)<?php echo Yii::t('strings', " at the beginning of each of your search values to specify how the comparison should be done.");?></p>
 
-<?php echo CHtml::link(Yii::t('strings', "Recherche avancée"),'#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link(Yii::t('strings', "Advanced Search"),'#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,

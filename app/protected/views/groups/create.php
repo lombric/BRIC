@@ -3,16 +3,16 @@
 /* @var $model Groups */
 
 $this->breadcrumbs=array(
-	Yii::t('strings', "Groupes")=>array('index'),
-	Yii::t('strings', "Créer"),
+	Yii::t('strings', "Groups")=>array('index'),
+	Yii::t('strings', "Create"),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('strings', "Liste des groupes"), 'url'=>array('index')),
-	array('label'=>Yii::t('strings', "Gérer les groupes"), 'url'=>array('admin')),
+	array('label'=>Yii::t('strings', "List Groups"), 'url'=>array('index')),
+	array('label'=>Yii::t('strings', "Manage Groups"), 'url'=>array('admin')),
 );
 ?>
 
-<?php echo Yii::t('strings', "<h1>Créer un groupe</h1>"); ?>
+<h1><?php echo Yii::t('strings', "Create Group"); ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

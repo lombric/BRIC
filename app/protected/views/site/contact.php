@@ -3,13 +3,13 @@
 /* @var $model ContactForm */
 /* @var $form CActiveForm */
 
-$this->pageTitle=Yii::app()->name . ' - Contact Us';
+$this->pageTitle=Yii::app()->name . ' - '.Yii::t('strings', 'Contact Us');
 $this->breadcrumbs=array(
 	Yii::t('strings', "Contact"),
 );
 ?>
 
-<?php echo Yii::t('strings', '<h1>Nous contacter</h1>'); ?>
+<h1><?php echo Yii::t('strings', 'Contact Us'); ?></h1>
 
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
@@ -29,12 +29,12 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<?php echo Yii::t('strings', '<p class="note">Les champs avec une <span class="required">*</span> sont obligatoires.</p>'); ?>
+	<p class="note"><?php echo Yii::t('strings', 'Fields with '); ?><span class="required">*</span><?php echo Yii::t('strings', ' are required.'); ?></p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Nom')); ?>
+		<?php echo $form->labelEx($model, 'name', array('title' => Yii::t('strings', 'name'))); ?>
 		<?php echo $form->textField($model,'name'); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
@@ -46,31 +46,31 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Sujet')); ?>
+		<?php echo $form->labelEx($model, 'subject', array('title' => Yii::t('strings', 'subject'))); ?>
 		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'subject'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Message')); ?>
+		<?php echo $form->labelEx($model, 'body', array('title' => Yii::t('strings', 'body'))); ?>
 		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'body'); ?>
 	</div>
 
 	<?php if(CCaptcha::checkRequirements()): ?>
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Code de vérification')); ?>
+		<?php echo $form->labelEx($model, 'verifyCode', array('title' => Yii::t('strings', 'verification code'))); ?>
 		<div>
 		<?php $this->widget('CCaptcha'); ?>
 		<?php echo $form->textField($model,'verifyCode'); ?>
 		</div>
-		<?php echo Yii::t('strings', "S'il vous plaît, veuillez entrer les lettres telles qu'elles figurent dans l'image ci-dessus.<br/>Les lettres ne sont pas sensibles à la casse.</div>"); ?>
+		<div class="hint"><?php echo Yii::t('strings', "Please enter the letters as they are shown in the image above."); ?><br/><?php echo Yii::t('strings', "Letters are not case-sensitive."); ?></div>
 		<?php echo $form->error($model,'verifyCode'); ?>
 	</div>
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton(Yii::t('strings', 'Envoyer')); ?>
+		<?php echo CHtml::submitButton(Yii::t('strings', 'Submit')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

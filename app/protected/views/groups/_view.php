@@ -3,35 +3,44 @@
 /* @var $data Groups */
 ?>
 
+<?php
+if (!$data->hide) {
+?>
+
 <div class="view">
+	
+	<!-- <b><?php /*echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id));*/ ?>
+	<br /> -->
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('name', array('title' => Yii::t('strings', 'Name')))); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->name), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Nom du groupe'))); ?>:</b>
-	<?php echo CHtml::encode($data->name); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Description')); ?>:</b>
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Spécification'))); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Specifications'))); ?>:</b>
 	<?php echo CHtml::encode($data->specifications); ?>
 	<br />
+	
+	<?php 
+	if (isset($data->parent_id) && is_numeric($data->parent_id)) {
+	?>
+		<b><?php echo CHtml::encode($data->getAttributeLabel('ancestor')); ?>:</b>
+		<?php echo  CHtml::link(CHtml::encode($data->ancestor->name), array('view', 'id'=>$data->ancestor->id)); ?>
+		<br />
+	<?php
+	}
+	?>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'ID du parent'))); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('parent_id', array('title' => Yii::t('strings', 'Parent ID')))); ?>:</b>
 	<?php echo CHtml::encode($data->parent_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Caché'))); ?>:</b>
-	<?php echo CHtml::encode($data->hide); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Système'))); ?>:</b>
-	<?php echo CHtml::encode($data->system); ?>
-	<br />
-
-
 </div>
+
+<?php
+}
+?>
