@@ -37,8 +37,8 @@ class Controller extends CController
      */
     public function accessRules(){
         return array(
-            array('allow', // allow authenticated user to perform any action
-                'users'=>array('@'),
+            array('allow', // allow admin user to perform any action
+                'users'=>array('admin'),
             ),
             array('deny',  // deny all users
                 'users'=>array('*'),
