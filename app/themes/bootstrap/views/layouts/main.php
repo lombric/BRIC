@@ -22,7 +22,7 @@
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Register', 'url'=>array('/members/register'),'visible'=>Yii::app()->user->isGuest),
 				
-                array('label'=>'Dashboard', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Dashboard', 'url'=>array('/'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Contact', 'url'=>array('/site/contact'),'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Members', 'url'=>array('/members/'),'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Groups', 'url'=>array('/groups/'),'visible'=>!Yii::app()->user->isGuest),
@@ -45,7 +45,7 @@
 	<?php echo $content; ?>
 
 	<div class="clear"></div>
-
+	<br/>
 	<div id="footer">
 		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
 		All Rights Reserved.<br/>
