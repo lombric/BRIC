@@ -16,10 +16,12 @@ $this->menu=array(
 
 
 
- <?php
-$this->widget ( 'bootstrap.widgets.TbGridView', array (
-		'type' => 'condensed striped',
-		'dataProvider' =>$dataProvider,
-		'template' => "{summary}{items}{pager}",
-		'summaryText' => 'Displaying {start}-{end} of {count} results.',
-));?>
+<?php
+$this->widget('bootstrap.widgets.TbGridView', array(
+    'type' => 'condensed striped',
+    'dataProvider' => $dataProvider,
+    'template' => "{summary}{items}{pager}",
+    'summaryText' => 'Displaying {start}-{end} of {count} results.',
+    'columns' => array('id', 'firstname', 'lastname', 'zip', 'city', 'address', 'email', 'phone', 'username', 'status')
+));
+?>
