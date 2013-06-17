@@ -15,7 +15,16 @@ $this->menu=array(
 
 <h1><?php echo Yii::t('strings', "Groups"); ?></h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<?php 
+//$this->widget('zii.widgets.CListView', array(
+	// 'dataProvider'=>$dataProvider,
+	// 'itemView'=>'_view',
+// )); ?>
+
+ <?php
+$this->widget ( 'bootstrap.widgets.TbGridView', array (
+		'type' => 'condensed striped',
+		'dataProvider' =>$dataProvider,
+		'template' => "{summary}{items}{pager}",
+		'summaryText' => 'Displaying {start}-{end} of {count} results.',
+));?>

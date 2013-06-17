@@ -84,7 +84,7 @@ class Groups extends CActiveRecord
 			'hide' => Yii::t('strings', 'Hide'),
 			'system' => Yii::t('strings', 'System'),
 			'ancestor' => 'Parent',
-			'children' => 'Sous-groupes',
+			'children' => Yii::t('strings', 'Sub groups'),
 		);
 	}
 

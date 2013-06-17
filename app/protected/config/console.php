@@ -3,14 +3,16 @@
 // This is the configuration for yiic console application.
 // Any writable CConsoleApplication properties can be configured here.
 return array(
-	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Lombric Application',
 
-	// preloading 'log' component
+	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+
+	'name'=>'BRIC',
+
 	'preload'=>array('log'),
 
-	// application components
 	'components'=>array(
+        
+        // Overrided in local conf
 		'db'=>array(
             'connectionString' => '',
             'emulatePrepare' => true,
@@ -18,6 +20,7 @@ return array(
             'password' => '',
             'charset' => 'utf8',
 		),
+
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -27,5 +30,6 @@ return array(
 				),
 			),
 		),
+
 	),
 );

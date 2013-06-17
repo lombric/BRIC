@@ -59,5 +59,15 @@ if (isset($model->children[0]->id) && is_numeric($model->children[0]->id)) {
 	}
 	
 }
+?>
 
-$this->widget('zii.widgets.CDetailView', $aParams); ?>
+
+<?php $this->widget('bootstrap.widgets.TbDetailView', array(
+    'data'=>$aParams
+    )
+); ?>
+
+
+
+
+

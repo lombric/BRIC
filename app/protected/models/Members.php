@@ -100,20 +100,21 @@ class Members extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'firstname' => Yii::t('strings', 'Firstname'),
-			'lastname' => Yii::t('strings', 'Lastname'),
-			'email' => 'Email',
-			'city' => Yii::t('strings', 'City'),
-			'address' => Yii::t('strings', 'Address'),
-			'zip' => Yii::t('strings', 'Zip'),
-			'mobile_phone' => Yii::t('strings', 'Mobile phone'),
-			'phone' => Yii::t('strings', 'Phone'),
-			'description' => 'Description',
-			'status' => 'Status',
-			'groups' => Yii::t('strings', 'Groups'),
-			'username' => Yii::t('strings', "Username"),
-			'password' => Yii::t('strings', 'Password'),
+			"id" => "ID",
+			"firstname" => Yii::t("strings","Firstname"),
+			"lastname" => Yii::t("strings","Lastname"),
+			"email" => "Email",
+			"city" => Yii::t("strings","City"),
+			"address" => Yii::t("strings","Address"),
+			"zip" => Yii::t("strings", "Zip"),
+			"mobile_phone" => Yii::t("strings","Mobile phone"),
+			"phone" => Yii::t("strings","Phone"),
+			"description" => "Description",
+			"status" => "Status",
+			"groups" => Yii::t("strings", "Groups"),
+			"username" => Yii::t("strings", "Username"),
+			"password" => Yii::t("strings", "Password"),
+			"password2" => Yii::t("strings", "Insert your password again"),
 		);
 	}
 

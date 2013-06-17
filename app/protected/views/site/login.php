@@ -2,7 +2,7 @@
 /* @var $this SiteController */
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
-/* Yii::app()->language='en'; pour changer la langue */
+
 $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
 	Yii::t('strings', "Login"),
@@ -22,23 +22,21 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note"><?php echo Yii::t('strings', 'Fields with '); ?><span class="required">*</span><?php echo Yii::t('strings', ' are required.'); ?></p>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', "Username")); ?>
+		<?php echo $form->labelEx($model, 'username', array('title' => Yii::t('strings', 'username'))); ?>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', "Password")); ?>
+		<?php echo $form->labelEx($model, 'password', array('title' => Yii::t('strings', 'password'))); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 
 	<div class="row rememberMe">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->labelEx($model,Yii::t('strings', "Remember me next time")); ?>
+		<?php echo $form->labelEx($model, 'rememberMe', array('title' => Yii::t('strings', 'Remember me next time'))); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
 

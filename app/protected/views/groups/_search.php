@@ -12,12 +12,12 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
+		<?php echo $form->label($model,'ID'); ?>
 		<?php echo $form->textField($model,'id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,Yii::t('strings', 'Name')); ?>
+		<?php echo $form->label($model, 'name', array('title' => Yii::t('strings', 'name'))); ?>
 		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
@@ -32,7 +32,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,Yii::t('strings', 'Parent ID')); ?>
+		<?php echo $form->labelEx($model, 'parent_id', array('title' => Yii::t('strings', 'Parent ID'))); ?>
 		<?php echo $form->textField($model,'parent_id'); ?>
 	</div>
 

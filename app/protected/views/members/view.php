@@ -16,25 +16,8 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('strings', "View Member"); ?> #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'firstname',
-		'lastname',
-		'email',
-		'city',
-		'address',
-		'zip',
-		'mobile_phone',
-		'phone',
-		'description',
-		'status',
-		'username',
-		'password',
-	),
-)); 
-
-?>
+<h1><?php echo Yii::t('strings', "View Member"); ?> <?php echo $model->firstname; ?></h1>
+<?php $this->widget('bootstrap.widgets.TbDetailView', array(
+    'data'=>$model
+    )
+); ?>

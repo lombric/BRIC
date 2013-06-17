@@ -13,7 +13,7 @@ if (!$data->hide) {
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id));*/ ?>
 	<br /> -->
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Name'))); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('name', array('title' => Yii::t('strings', 'Name')))); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->name), array('view', 'id'=>$data->id)); ?>
 	<br />
 
@@ -21,7 +21,7 @@ if (!$data->hide) {
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Specification'))); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Specifications'))); ?>:</b>
 	<?php echo CHtml::encode($data->specifications); ?>
 	<br />
 	
@@ -34,7 +34,6 @@ if (!$data->hide) {
 	<?php
 	}
 	?>
-
 </div>
 
 <?php

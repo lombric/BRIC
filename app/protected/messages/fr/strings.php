@@ -33,6 +33,7 @@
 		'View Member' => 'Voir le membre',
 		'Members' => 'Membres',
 		'Are you sure you want to delete this member ?' => 'Êtes-vous sûr de vouloir supprimer ce membre ?',
+		'Status' => 'Statut',
 
 
 		//User
@@ -63,6 +64,7 @@
 		' at the beginning of each of your search values to specify how the comparison should be done.' => ' au début de chacunes de vos valeurs de recherche pour spécifier comment la comparaison doit être effectuée.',
 
 		//Contact
+		'Your name' => 'Votre nom',
 		'Subject' => 'Sujet',
 		'Body' => 'Message',
 		'Verification Code' => 'Code de vérification',
@@ -95,10 +97,14 @@
 		'View Groups' => 'Voir le groupe',
 
 		//Dashboard
-		'Hello' => 'Bonjour',
+		'Hello ' => 'Bonjour ',
 		"You are not a member of any groups" => "Vous n'êtes membre d'aucun groupe",
 		"You are a member of " => "Vous êtes membre du groupe ",
-		'You are a member of the following groups: ' => 'Vous êtes membre des groupes suivants:'
+		'You are a member of the following groups: ' => 'Vous êtes membre des groupes suivants:',
+
+		//Footer
+		'All Rights Reserved.' => 'Tous droits réservés',
+		'by My Company.' => 'par Lombric'
 
 	);
 ?>

@@ -2,21 +2,22 @@
 /* @var $this GroupsController */
 /* @var $model Groups */
 /* @var $form CActiveForm */
-?>
+/** @var BootActiveForm $form */
 
-<div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'groups-form',
-	'enableAjaxValidation'=>false,
+$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+    'id'=>'groups-form',
+    'type'=>'verticalForm',
 )); ?>
 
+<div class="form">
 	<p class="note"><?php echo Yii::t('strings', 'Fields with '); ?><span class="required">*</span><?php echo Yii::t('strings', ' are required.'); ?></p>
+
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Name')); ?>
+		<?php echo $form->labelEx($model, 'name', array('title' => Yii::t('strings', 'name'))); ?>
 		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
@@ -28,11 +29,10 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,Yii::t('strings', 'Specifications')); ?>
+		<?php echo $form->labelEx($model, 'Specifications', array('title' => Yii::t('strings', 'Specifications'))); ?>
 		<?php echo $form->textArea($model,'specifications',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'specifications'); ?>
 	</div>
-
 
     <div class="row">
         <?php echo $form->labelEx($model,Yii::t('strings', 'Sub groups')); ?>
@@ -55,9 +55,18 @@
 		<?php echo $form->checkBox($model,'system'); ?>
 		<?php echo $form->error($model,'system'); ?>
 	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('strings', 'Create') : Yii::t('strings', 'Save')); ?>
+	<br/><div class="row buttons">
+	
+	<?php 
+	
+	if($model->isNewRecord) $label = Yii::t('strings', 'Create');
+	else $label = Yii::t('strings', 'Save');
+		$this->widget('bootstrap.widgets.TbButton', array(
+            'buttonType'=>'submit',
+            'type'=>'primary',
+			'label'=>$label,
+        )); 
+	?>
 	</div>
 
 <?php $this->endWidget(); ?>
