@@ -35,10 +35,6 @@ if (!$data->hide) {
 	}
 	?>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel(Yii::t('strings', 'Parent ID'))); ?>:</b>
-	<?php echo CHtml::encode($data->parent_id); ?>
-	<br />
-
 </div>
 
 <?php

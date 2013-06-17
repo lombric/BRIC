@@ -111,4 +111,51 @@ class Groups extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function hasAdmin() {
+		if (isset($this->admin->id) && is_numeric($this->admin->id)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	private function is_member() {
+		$iIdUser = Yii::app()->user->id;
+		foreach ($this->members as $oMember) {
+			if ($iIdUser == $oMember->id) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public function getAdminList() {
+		$aDatas = array();
+		foreach ($this->members as $oUser) {
+			$aDatas[$oUser->id] = $oUser->lastname . ' ' . $oUser->firstname;
+		}
+		
+		$sReturn = '<form method="post" action="' . $_SERVER['SCRIPT_NAME'] . '/groups/updateadmin/' . $this->id . '">';
+		$sSelected = '';
+		if ($this->hasAdmin()) {
+			$sSelected = $this->admin->id;
+			$sReturn .= CHtml::link(CHtml::encode($this->admin->firstname . ' ' . $this->admin->lastname), array('./', 'members'=>$this->admin->id)) . ' ';
+		}
+		
+		if ($this->is_member()) {
+			$sReturn .= CHtml::dropDownList('admin', $sSelected, $aDatas) . '<input type="submit" value="Modifier"/></form>';
+		}
+		
+		return $sReturn;
+	}
+	
+	public function updateAdmin($id_admin) {
+		$db = Yii::app()->db->createCommand();
+		if ($this->hasAdmin()) {
+			$db->update('members_groups', array('is_admin'=>0), 'group_id="' . $this->id . '" AND member_id="' . $this->admin->id . '"');
+		}
+		$db->update('members_groups', array('is_admin'=>1), 'group_id="' . $this->id . '" AND member_id="' . $id_admin . '"');
+	}
 }

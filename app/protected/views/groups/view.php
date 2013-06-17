@@ -14,6 +14,8 @@ $this->menu=array(
 	array('label'=>Yii::t('strings', "Delete Group"), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>Yii::t('strings', "Êtes-vous sûr de vouloir supprimer ce groupe ?"))),
 	array('label'=>Yii::t('strings', "Manage Groups"), 'url'=>array('admin')),
 );
+
+
 ?>
 
 <h1><?php echo Yii::t('strings', "View Groups"); ?> <?php echo $model->name; ?></h1>
@@ -24,20 +26,16 @@ $aParams = array(
 	'attributes'=>array(
 		'name',
 		'description',
-		'specifications'
+		'specifications',
+		array( 
+			'label'=>'Administrateur',
+			'type'=>'raw',
+			'value'=>$model->getAdminList()
+		)
 	)
 );
-//die(CHtml::link(CHtml::encode($model->admin->lastname), array('./', 'members'=>$model->admin->id)));
-// Has admin, parent or children ?
-if (isset($model->admin->id) && is_numeric($model->admin->id)) {
-	array_push($aParams['attributes'], 
-		array( 
-			'label'=>'Admin',
-			'type'=>'raw',
-			'value'=>CHtml::link(CHtml::encode($model->admin->firstname . ' ' . $model->admin->lastname), array('./', 'members'=>$model->admin->id))
-		)
-	);
-}
+
+// Has parent or children ?
 if (isset($model->ancestor->id) && is_numeric($model->ancestor->id)) {
 	array_push($aParams['attributes'], 
 		array( 
