@@ -37,25 +37,23 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
- <?php
-$this->widget ( 'bootstrap.widgets.TbGridView', array (
-		'type' => 'condensed striped',
-		'dataProvider' => $model->search(),
-		'filter' => $model,
-		'template' => "{summary}{items}{pager}",
-		'summaryText' => 'Displaying {start}-{end} of {count} results.',
-		'columns' => array (	
-			'id',
-			'firstname',
-			'lastname',
-			'email',
-			'city',
-			'address',
-			/*
-			'system',
-			*/
-			array(
-				'class'=>'CButtonColumn',
-			),
+<?php
+$this->widget('bootstrap.widgets.TbGridView', array(
+	'type' => 'condensed striped',
+	'dataProvider' => $model->search(),
+	'filter' => $model,
+	'template' => "{summary}{items}{pager}",
+	'summaryText' => 'Displaying {start}-{end} of {count} results.',
+	'columns' => array (	
+		'id',
+		'firstname',
+		'lastname',
+		'email',
+		'username',
+		'status',
+		array(
+			'class'=>'CButtonColumn',
 		),
-) );?>
+	),
+));
+?>
