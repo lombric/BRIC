@@ -5,29 +5,22 @@ class SiteController extends Controller
 
 	public $defaultAction = 'dashboard';
 
-	public function accessRules(){
-        $rules=parent::accessRules();
-        array_unshift($rules,array(
-            'allow',  // allow all users to perform 'login'
-            'actions'=>array('login'),
-            'users'=>array('*'),
-        ));
-        return $rules;
-    }
-
-	public function actions()
+	public function accessRules()
 	{
 		return array(
-			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-				'backColor'=>0xFFFFFF,
+			array('allow',
+				'actions'=>array('dashboard', 'contact', 'logout'),
+				'users'=>array('@'),
 			),
-			// page action renders "static" pages stored under 'protected/views/site/pages'
-			// They can be accessed via: index.php?r=site/page&view=FileName
-			'page'=>array(
-				'class'=>'CViewAction',
+			array('allow',
+				'actions'=>array('login'),
+				'users'=>array('?'),
 			),
+			array('allow',
+				'actions'=>array('error'),
+				'users'=>array('*'),
+			),
+			array('deny'),
 		);
 	}
 	
@@ -38,20 +31,6 @@ class SiteController extends Controller
             $this->redirect(array('site/login'));
         else
 			$this->render('dashboard');
-	}
-
-	/**
-	 * This is the default 'index' action that is invoked
-	 * when an action is not explicitly requested by users.
-	 */
-	public function actionIndex()
-	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		if(Yii::app()->user->getId()===null)
-            $this->redirect(array('site/login'));
-        else
-			$this->render('index');
 	}
 
 	/**
@@ -128,4 +107,5 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
 }

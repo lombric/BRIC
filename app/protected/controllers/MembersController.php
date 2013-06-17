@@ -3,34 +3,20 @@
 class MembersController extends Controller
 {
 
-	public $layout='//layouts/column2';
+	public $layout = '//layouts/column2';
 
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to access to register form
+			array('allow',
+				'actions'=>array('create', 'view', 'update', 'delete', 'index', 'admin'),
+				'users'=>array('@'),
+			),
+			array('allow',
 				'actions'=>array('register'),
 				'users'=>array('?'),
-			),			
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('@'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			// array('deny', // deny all connected users to access to register form
-				// 'actions'=>array('register'),
-				// 'users'=>array('@'),
-			// ),		
-			array('deny', // deny all users
-				'users'=>array('*'),
-			),				
+            array('deny'),
 		);
 	}
 
@@ -174,4 +160,5 @@ class MembersController extends Controller
 			Yii::app()->end();
 		}
 	}
+
 }
