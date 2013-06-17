@@ -2,7 +2,7 @@
 /* @var $this SiteController */
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
-/* Yii::app()->language='en'; pour changer la langue */
+
 $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
 	Yii::t('strings', "Login"),

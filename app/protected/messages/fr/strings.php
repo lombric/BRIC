@@ -97,10 +97,14 @@
 		'View Groups' => 'Voir le groupe',
 
 		//Dashboard
-		'Hello' => 'Bonjour',
+		'Hello ' => 'Bonjour ',
 		"You are not a member of any groups" => "Vous n'êtes membre d'aucun groupe",
 		"You are a member of " => "Vous êtes membre du groupe ",
-		'You are a member of the following groups: ' => 'Vous êtes membre des groupes suivants:'
+		'You are a member of the following groups: ' => 'Vous êtes membre des groupes suivants:',
+
+		//Footer
+		'All Rights Reserved.' => 'Tous droits réservés',
+		'by My Company.' => 'par Lombric'
 
 	);
 ?>
