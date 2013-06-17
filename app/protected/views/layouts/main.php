@@ -26,30 +26,6 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-	<div id="mainmenu">
-		<?php 
-			if(Yii::app()->user->getId()===null) {
-				 $this->widget('zii.widgets.CMenu',array(
-				'items'=>array(
-					array('label'=>Yii::t('strings', "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>Yii::t('strings', "Register"), 'url'=>array('/members/register'), 'visible'=>Yii::app()->user->isGuest)
-					),
-				));
-			}
-			else {
-				$this->widget('zii.widgets.CMenu',array(
-				'items'=>array(
-					array('label'=>Yii::t('strings', "Dashboard"), 'url'=>array('/')),
-					array('label'=>Yii::t('strings', "Contact"), 'url'=>array('/site/contact')),
-					array('label'=>Yii::t('strings', "Groups"), 'url'=>array('/groups/index')),
-					array('label'=>Yii::t('strings', "Members"), 'url'=>array('/members/index')),
-					array('label'=>Yii::t('strings', "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>Yii::t("strings", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-					),
-				)); 
-			}
-		?>
-	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,

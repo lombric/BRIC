@@ -13,7 +13,6 @@ return array(
 	
 	// General configuration
 	'charset'=>'utf-8',
-    'sourceLanguage'=>'fr_fr',
 	
 	// preloading 'log' component
     'preload'=>array(
@@ -28,7 +27,7 @@ return array(
     ),
 
 	'sourceLanguage'=>'en',
-	//'language' => 'fr',
+	'language' => 'fr',
 	
     'modules'=>array(
         'gii'=>array(

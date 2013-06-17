@@ -19,16 +19,15 @@
         array(
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Register', 'url'=>array('/members/register'),'visible'=>Yii::app()->user->isGuest),
-				
-                array('label'=>'Dashboard', 'url'=>array('/'), 'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>'Contact', 'url'=>array('/site/contact'),'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>'Members', 'url'=>array('/members/'),'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>'Groups', 'url'=>array('/groups/'),'visible'=>!Yii::app()->user->isGuest),
-           
-                
-                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				// Disconnected
+				array('label'=>Yii::t('strings', "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>Yii::t('strings', "Register"), 'url'=>array('/members/register'),'visible'=>Yii::app()->user->isGuest),
+				// Connected
+                array('label'=>Yii::t('strings', "Dashboard"), 'url'=>array('/site/dashboard'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>Yii::t('strings', "Contact"), 'url'=>array('/site/contact'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>Yii::t('strings', "Members"), 'url'=>array('/members/index'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>Yii::t('strings', "Groups"), 'url'=>array('/groups/index'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>Yii::t("strings", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
             ),
         ),
     ),
@@ -47,7 +46,7 @@
 	<div class="clear"></div>
 	<br/>
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by BRIC Team.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

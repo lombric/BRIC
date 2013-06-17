@@ -28,7 +28,7 @@
 .grid-view .checkbox-column { width:15px; }
 .grid-view .summary {
   margin-bottom:5px;
-  text-align:right;
+  text-align:left;
 }
 .grid-view .pager { margin-top:5px; }
 .grid-view .empty { font-style:italic; }
