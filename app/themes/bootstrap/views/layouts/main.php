@@ -22,10 +22,10 @@
 				array('label'=>Yii::t('strings', "Login"), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>Yii::t('strings', "Register"), 'url'=>array('/members/register'),'visible'=>Yii::app()->user->isGuest),
 				
-                array('label'=>Yii::t('strings', "Dashboard"), 'url'=>array('/'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>Yii::t('strings', "Dashboard"), 'url'=>array('/site/dashboard'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>Yii::t('strings', "Contact"), 'url'=>array('/site/contact'),'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>Yii::t('strings', "Members"), 'url'=>array('/members/'),'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>Yii::t('strings', "Groups"), 'url'=>array('/groups/'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>Yii::t('strings', "Members"), 'url'=>array('members/index'),'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>Yii::t('strings', "Groups"), 'url'=>array('groups/index'),'visible'=>!Yii::app()->user->isGuest),
            
                 
                 array('label'=>Yii::t("strings", "Logout").' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
