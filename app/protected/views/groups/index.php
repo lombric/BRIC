@@ -27,4 +27,10 @@ $this->widget ( 'bootstrap.widgets.TbGridView', array (
 		'dataProvider' =>$dataProvider,
 		'template' => "{summary}{items}{pager}",
 		'summaryText' => 'Displaying {start}-{end} of {count} results.',
+		'columns'=>array(
+			array('name'=>'Nom', 'type'=>'raw', 'value'=>'CHtml::link($data->name, array("/", "groups"=>$data->id))'),
+			'description',
+			'specifications',
+			array ('name'=>'Parent', 'type'=>'raw', 'value'=>'CHtml::link($data->ancestor["name"], array("/", "groups"=>$data->ancestor["id"]))'),
+		),
 ));?>

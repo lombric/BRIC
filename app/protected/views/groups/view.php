@@ -21,7 +21,10 @@ $this->menu=array(
 <h1><?php echo Yii::t('strings', "View Groups"); ?> <?php echo $model->name; ?></h1>
 
 <?php 
+
+
 $aParams = array(
+	'type'=>'bordered striped',
 	'data'=>$model,
 	'attributes'=>array(
 		'name',
@@ -62,10 +65,7 @@ if (isset($model->children[0]->id) && is_numeric($model->children[0]->id)) {
 ?>
 
 
-<?php $this->widget('bootstrap.widgets.TbDetailView', array(
-    'data'=>$aParams
-    )
-); ?>
+<?php $this->widget('bootstrap.widgets.TbDetailView', $aParams); ?>
 
 
 
