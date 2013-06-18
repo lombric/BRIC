@@ -32,12 +32,13 @@ class UserIdentity extends CUserIdentity
 		else {
 			$this->_id = $user->id;
 			$this->username = $user->username;
-			$this->errorCode=self::ERROR_NONE;
+			$this->errorCode = self::ERROR_NONE;
 		}
 		return !$this->errorCode;
 	}
 	
-	public function getId() {
+	public function getId()
+	{
 		return $this->_id;
 	}
 }
