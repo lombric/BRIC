@@ -14,3 +14,5 @@ The path:
 /protected/extensions/[folders]
 
 Now to configure the main.php (/protected/config/main.php) check the example in (doc/examples/bootrstrap_main.php).
+
+Note that the layout is in the bootstrap folder.
