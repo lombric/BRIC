@@ -26,7 +26,6 @@ $this->widget ( 'bootstrap.widgets.TbGridView', array (
 		'type' => 'condensed striped',
 		'dataProvider' =>$dataProvider,
 		'template' => "{summary}{items}{pager}",
-		'summaryText' => 'Displaying {start}-{end} of {count} results.',
 		'columns'=>array(
 			array('name'=>'Nom', 'type'=>'raw', 'value'=>'CHtml::link($data->name, array("/", "groups"=>$data->id))'),
 			'description',

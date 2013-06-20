@@ -43,7 +43,6 @@ $this->widget ( 'bootstrap.widgets.TbGridView', array (
 		'dataProvider' => $model->search(),
 		'filter' => $model,
 		'template' => "{summary}{items}{pager}",
-		'summaryText' => 'Displaying {start}-{end} of {count} results.',
 		'columns' => array (	
 			'id',
 			'firstname',
