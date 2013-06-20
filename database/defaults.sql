@@ -1,1 +1,2 @@
-INSERT INTO `members` (`firstname`, `lastname`, `email`, `status`, `username`, `password`) VALUES ('admin', 'admin', 'admin@app.local', 'active', 'admin', 'admin');
+INSERT INTO `members` (`firstname`, `lastname`, `email`, `status`, `username`, `password`) VALUES ('Administrateur', 'One', 'admin@app.local', 'active', 'admin', 'admin');
+INSERT INTO `members` (`firstname`, `lastname`, `email`, `status`, `username`, `password`) VALUES ('Utilisateur', 'One', 'admin@app.local', 'active', 'user', 'user');

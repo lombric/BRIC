@@ -15,4 +15,4 @@ The path:
 
 Now to configure the main.php (/protected/config/main.php) check the example in (doc/examples/bootrstrap_main.php).
 
-Note that the layout is in the bootstrap folder.
+Note that the layout is in the bootstrap folder and the previous layout main file will not be used now.
